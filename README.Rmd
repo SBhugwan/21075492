@@ -35,7 +35,7 @@ print(Trends)
 Next i look at the content on netflix and it is clear the movies dominate 
 
 ```{r}
-Pie
+Pie 
 ```
 
 I then looked at what are the most popular genres on Netflix and illustrated it using a word cloud 
