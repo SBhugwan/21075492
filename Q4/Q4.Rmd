@@ -157,11 +157,16 @@ plot_average_ratings(sorted_ratings)
 
 ```
 
+```{r Figure5, warning =  FALSE, fig.align = 'center', fig.cap = "Age Ratings   \\label{Figure4}", fig.height = 4, fig.width = 6, dev = 'png'}
+
+    print(certification_table)
+```
+
 # Popular people on Netflix 
 
 If SU wants to launch its own service it should consider which actors/actress has the most content on netflix
 
-```{r Figure5,  warning =  FALSE, fig.align = 'center', fig.cap = "Common Stars on Netflix  \\label{Figure1}", fig.ext = 'png', fig.height = 3, fig.width = 6}
+```{r Figure6,  warning =  FALSE, fig.align = 'center', fig.cap = "Common Stars on Netflix  \\label{Figure1}", fig.ext = 'png', fig.height = 3, fig.width = 6}
 
 plot_top_names(merged_data) 
 
@@ -169,17 +174,17 @@ plot_top_names(merged_data)
 
 Therefore Shah Rukh Khan has the most content on netflix, thus if SU has its own streaming service it should include some of his content. This is because if we look at the Figure 4.2 we can see that he has a high popularity as well as the content he is in tends to be rated above 6 on IMDb.
 
-```{r Figure6,  warning =  FALSE, fig.align = 'center', fig.cap = "Correlation \\label{Figure3}", fig.ext = 'png', fig.height = 3, fig.width = 6}
+```{r Figure7,  warning =  FALSE, fig.align = 'center', fig.cap = "Correlation \\label{Figure3}", fig.ext = 'png', fig.height = 3, fig.width = 6}
 
 plot_popularity("Shah Rukh Khan")
 
 ```
 
-# Content By Country 
+# Content By Country
 
 Given that SU will be launching a streaming service in South Africa first and then branch out into the world. Given this it can be seen below that America produces the most content on netflix.
 
-```{r Figure7,  warning =  FALSE, fig.align = 'center', fig.cap = "Content Produced by Country \\label{Figure1}", fig.ext = 'png', fig.height = 3, fig.width = 6}
+```{r Figure8,  warning =  FALSE, fig.align = 'center', fig.cap = "Content Produced by Country \\label{Figure1}", fig.ext = 'png', fig.height = 3, fig.width = 6}
 
 plot_title_count_by_country(merged_data)
 
@@ -189,7 +194,7 @@ Therefore for SU to be unique it should potential look to produce it own unique 
 
 What SU could possible do is look as genres that have the most dominate genres
 
-```{r Figure8,  warning =  FALSE, fig.align = 'center', fig.cap = "Word cloud most dominate genres \\label{Figure2}", fig.ext = 'png', fig.height = 3, fig.width = 6}
+```{r Figure9,  warning =  FALSE, fig.align = 'center', fig.cap = "Word cloud most dominate genres \\label{Figure2}", fig.ext = 'png', fig.height = 3, fig.width = 6}
 
 generate_wordcloud(genre_counts)
 
@@ -197,4 +202,4 @@ generate_wordcloud(genre_counts)
 
 Therefore it can bee see that drama and comedy are the most popular content on netflix
 
-# Conclusion 
+# Conclusion

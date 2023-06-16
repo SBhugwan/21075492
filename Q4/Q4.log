@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023) (preloaded format=pdflatex 2023.6.13)  16 JUN 2023 12:10
+This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023) (preloaded format=pdflatex 2023.6.13)  16 JUN 2023 18:43
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -669,31 +669,31 @@ File: Q4_files/figure-latex/Figure4-1.png Graphic file (type png)
 <use Q4_files/figure-latex/Figure4-1.png>
 Package pdftex.def Info: Q4_files/figure-latex/Figure4-1.png  used on input line 301.
 (pdftex.def)             Requested size: 433.61894pt x 289.07928pt.
-<Q4_files/figure-latex/Figure5-1.png, id=71, 433.62pt x 216.81pt>
-File: Q4_files/figure-latex/Figure5-1.png Graphic file (type png)
-<use Q4_files/figure-latex/Figure5-1.png>
-Package pdftex.def Info: Q4_files/figure-latex/Figure5-1.png  used on input line 316.
-(pdftex.def)             Requested size: 433.61894pt x 216.80946pt.
 [4 <./Q4_files/figure-latex/Figure4-1.png>]
-<Q4_files/figure-latex/Figure6-1.png, id=79, 433.62pt x 216.81pt>
+<Q4_files/figure-latex/Figure6-1.png, id=78, 433.62pt x 216.81pt>
 File: Q4_files/figure-latex/Figure6-1.png Graphic file (type png)
 <use Q4_files/figure-latex/Figure6-1.png>
 Package pdftex.def Info: Q4_files/figure-latex/Figure6-1.png  used on input line 331.
 (pdftex.def)             Requested size: 433.61894pt x 216.80946pt.
-[5 <./Q4_files/figure-latex/Figure5-1.png> <./Q4_files/figure-latex/Figure6-1.png>]
-<Q4_files/figure-latex/Figure7-1.png, id=100, 433.62pt x 216.81pt>
+<Q4_files/figure-latex/Figure7-1.png, id=79, 433.62pt x 216.81pt>
 File: Q4_files/figure-latex/Figure7-1.png Graphic file (type png)
 <use Q4_files/figure-latex/Figure7-1.png>
-Package pdftex.def Info: Q4_files/figure-latex/Figure7-1.png  used on input line 347.
+Package pdftex.def Info: Q4_files/figure-latex/Figure7-1.png  used on input line 346.
 (pdftex.def)             Requested size: 433.61894pt x 216.80946pt.
-<Q4_files/figure-latex/Figure8-1.png, id=101, 433.62pt x 216.81pt>
+[5 <./Q4_files/figure-latex/Figure6-1.png>]
+<Q4_files/figure-latex/Figure8-1.png, id=91, 433.62pt x 216.81pt>
 File: Q4_files/figure-latex/Figure8-1.png Graphic file (type png)
 <use Q4_files/figure-latex/Figure8-1.png>
 Package pdftex.def Info: Q4_files/figure-latex/Figure8-1.png  used on input line 362.
 (pdftex.def)             Requested size: 433.61894pt x 216.80946pt.
-[6 <./Q4_files/figure-latex/Figure7-1.png>]
+[6 <./Q4_files/figure-latex/Figure7-1.png> <./Q4_files/figure-latex/Figure8-1.png>]
+<Q4_files/figure-latex/Figure9-1.png, id=114, 433.62pt x 216.81pt>
+File: Q4_files/figure-latex/Figure9-1.png Graphic file (type png)
+<use Q4_files/figure-latex/Figure9-1.png>
+Package pdftex.def Info: Q4_files/figure-latex/Figure9-1.png  used on input line 377.
+(pdftex.def)             Requested size: 433.61894pt x 216.80946pt.
 No file Q4.bbl.
-[7 <./Q4_files/figure-latex/Figure8-1.png>] (./Q4.aux)
+[7 <./Q4_files/figure-latex/Figure9-1.png>] (./Q4.aux)
  ***********
 LaTeX2e <2023-06-01>
 L3 programming layer <2023-06-05>
@@ -705,18 +705,18 @@ Package rerunfilecheck Info: File `Q4.out' has not changed.
 (rerunfilecheck)             Checksum: 3EAE5FC4C728603E368ADB66FB98B79B;821.
  ) 
 Here is how much of TeX's memory you used:
- 16172 strings out of 477695
- 299612 string characters out of 5830216
- 1858759 words of memory out of 5000000
- 36395 multiletter control sequences out of 15000+600000
- 561053 words of font info for 66 fonts, out of 8000000 for 9000
+ 16176 strings out of 477695
+ 299695 string characters out of 5830216
+ 1859759 words of memory out of 5000000
+ 36398 multiletter control sequences out of 15000+600000
+ 561371 words of font info for 67 fonts, out of 8000000 for 9000
  14 hyphenation exceptions out of 8191
- 75i,11n,79p,539b,894s stack positions out of 10000i,1000n,20000p,200000b,200000s
-</Users/sahilbhugwan/Library/TinyTeX/texmf-dist/fonts/type1/public/lm/lmbx12.pfb></Users/sahilbhugwan/Library/TinyTeX/texmf-dist/fonts/type1/public/lm/lmr10.pfb></Users/sahilbhugwan/Library/TinyTeX/texmf-dist/fonts/type1/public/lm/lmr12.pfb></Users/sahilbhugwan/Library/TinyTeX/texmf-dist/fonts/type1/public/lm/lmr17.pfb></Users/sahilbhugwan/Library/TinyTeX/texmf-dist/fonts/type1/public/lm/lmri10.pfb></Users/sahilbhugwan/Library/TinyTeX/texmf-dist/fonts/type1/public/lm/lmri12.pfb></Users/sahilbhugwan/Library/TinyTeX/texmf-dist/fonts/type1/public/lm/lmri7.pfb></Users/sahilbhugwan/Library/TinyTeX/texmf-dist/fonts/type1/public/lm/lmtt10.pfb>
-Output written on Q4.pdf (7 pages, 233105 bytes).
+ 75i,12n,79p,539b,1039s stack positions out of 10000i,1000n,20000p,200000b,200000s
+</Users/sahilbhugwan/Library/TinyTeX/texmf-dist/fonts/type1/public/lm/lmbx12.pfb></Users/sahilbhugwan/Library/TinyTeX/texmf-dist/fonts/type1/public/lm/lmr10.pfb></Users/sahilbhugwan/Library/TinyTeX/texmf-dist/fonts/type1/public/lm/lmr12.pfb></Users/sahilbhugwan/Library/TinyTeX/texmf-dist/fonts/type1/public/lm/lmr17.pfb></Users/sahilbhugwan/Library/TinyTeX/texmf-dist/fonts/type1/public/lm/lmri10.pfb></Users/sahilbhugwan/Library/TinyTeX/texmf-dist/fonts/type1/public/lm/lmri12.pfb></Users/sahilbhugwan/Library/TinyTeX/texmf-dist/fonts/type1/public/lm/lmri7.pfb></Users/sahilbhugwan/Library/TinyTeX/texmf-dist/fonts/type1/public/lm/lmtt10.pfb></Users/sahilbhugwan/Library/TinyTeX/texmf-dist/fonts/type1/public/lm/lmtt12.pfb>
+Output written on Q4.pdf (7 pages, 258121 bytes).
 PDF statistics:
- 170 PDF objects out of 1000 (max. 8388607)
- 127 compressed objects within 2 object streams
+ 175 PDF objects out of 1000 (max. 8388607)
+ 130 compressed objects within 2 object streams
  29 named destinations out of 1000 (max. 500000)
  89 words of extra memory for PDF output out of 10000 (max. 10000000)
 

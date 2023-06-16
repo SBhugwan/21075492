@@ -68,10 +68,9 @@ analyze_content_types <- function(data) {
 }
 
 
-#plots <- analyze_content_types(merged_data)
-
+plots <- analyze_content_types(merged_data)
 Pie<- print(plots$pie_chart)
-Pie  #use to call graph
+#Pie  #use to call graph
 Bar<- print(plots$bar_chart)
 #Bar#use to call graph
 
@@ -202,7 +201,18 @@ generate_wordcloud <- function(data) {
               colors = brewer.pal(8, "Dark2"))
 }
 
-#generate_wordcloud(genre_counts) # use to view
+
+
+# Parental rating
+certification_data <- merged_data[, c("title", "age_certification")]
+certification_counts <- table(certification_data$age_certification)
+certification_data <- merged_data[, c("title", "age_certification")]
+certification_counts <- table(certification_data$age_certification)
+certification_table <- data.frame(age_certification = names(certification_counts),
+                                  num_titles = as.numeric(certification_counts))
+print(certification_table)
+
+
 
 
 
