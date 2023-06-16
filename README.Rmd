@@ -16,7 +16,21 @@ suppressMessages(library(wordcloud))
 ```
 
 
+#Question 2 
 
+```{r}
+source("/Users/sahilbhugwan/Downloads/Data science/21075492/Q2/code/Q2.R")
+```
+Line chart for Max tempretures over the years 
+
+```{r}
+ print(MT)
+```
+
+scatter plot for temperature vs. precipitation
+```{r}
+print(TemP)
+```
 
 
 #Question 4 
