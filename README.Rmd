@@ -41,6 +41,7 @@ analyze_titles <- function(data) {
         labs(x = "Year", y = "Number of Titles", title = "Trends in Number of Titles on Netflix")
 }
 
+Trends <- analyze_titles(merged_data)
 print(Trends) 
 ```
 
