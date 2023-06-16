@@ -4,26 +4,48 @@ output: html_document
 date: "2023-06-15"
 ---
 
-```{r setup, include=FALSE}
-knitr::opts_chunk$set(echo = TRUE)
+# The purpose of this README is to show my solutions to the Data science 871 exam.
+
+The first thing i did is loadpackages that i may need 
+```{r}
+suppressMessages(library(tidyverse)) 
+suppressMessages(library(tinytex))
+suppressMessages(library(viridis))
+suppressMessages(library(wordcloud))
+
 ```
 
-## R Markdown
 
-This is an R Markdown document. Markdown is a simple formatting syntax for authoring HTML, PDF, and MS Word documents. For more details on using R Markdown see <http://rmarkdown.rstudio.com>.
 
-When you click the **Knit** button a document will be generated that includes both content as well as the output of any embedded R code chunks within the document. You can embed an R code chunk like this:
 
-```{r cars}
-summary(cars)
+
+#Question 4 
+What works in Streaming service if SU lauches its own one 
+The full pdf report can be found in Q4 folder.
+
+```{r}
+source("/Users/sahilbhugwan/Downloads/Data science/21075492/Q4/code/Q4.R")
 ```
 
-## Including Plots
-
-You can also embed plots, for example:
-
-```{r pressure, echo=FALSE}
-plot(pressure)
+The first thing to look as is netfix decline 
+```{r}
+print(Trends) 
 ```
 
-Note that the `echo = FALSE` parameter was added to the code chunk to prevent printing of the R code that generated the plot.
+Next i look at the content on netflix and it is clear the movies dominate 
+
+```{r}
+Pie
+```
+
+I then looked at what are the most popular genres on Netflix and illustrated it using a word cloud 
+```{r}
+generate_wordcloud(genre_counts)
+```
+
+I also looked at which stars appear most on netflix 
+```{r}
+plot_top_names(merged_data)
+```
+
+Therefore if SU wants to launch its own streamig service it should look to produce movies that are drama or comdey based and include a high profile actor/actress. 
