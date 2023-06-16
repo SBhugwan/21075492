@@ -36,7 +36,7 @@ analyze_titles <- function(data) {
 
 Trends <- analyze_titles(merged_data)
 
-print(Trends) #use to call graph
+#print(Trends) #use to call graph
 
 
 # 2 # View distribution of content
@@ -68,12 +68,12 @@ analyze_content_types <- function(data) {
 }
 
 
-plots <- analyze_content_types(merged_data)
+#plots <- analyze_content_types(merged_data)
 
 Pie<- print(plots$pie_chart)
 Pie  #use to call graph
 Bar<- print(plots$bar_chart)
-Bar#use to call graph
+#Bar#use to call graph
 
 # 3 average rating between movie and show
 
@@ -98,7 +98,7 @@ plot_average_ratings <- function(ratings_data) {
 }
 
 
-plot_average_ratings(sorted_ratings) #use to call graph
+#plot_average_ratings(sorted_ratings) #use to call graph
 
 
 # Names with the most content on netflix
@@ -123,7 +123,7 @@ plot_top_names <- function(data) {
         scale_fill_manual(values = color_palette)
 }
 
-plot_top_names(merged_data)  # Use to call graph
+#plot_top_names(merged_data)  # Use to call graph
 
 #correlation
 
@@ -142,7 +142,7 @@ plot_popularity <- function(data, actor_name) {
 
 plot_popularity <- purrr::partial(plot_popularity, data = merged_data)
 
-plot_popularity("Shah Rukh Khan")
+#plot_popularity("Shah Rukh Khan")
 
 
 # counrties that produce the most content
@@ -165,7 +165,7 @@ plot_title_count_by_country <- function(data) {
         scale_fill_viridis_d(option = "A", alpha = 0.8)
 }
 
-plot_title_count_by_country(merged_data)
+#plot_title_count_by_country(merged_data)
 
 
 #Analysis genres
@@ -193,7 +193,7 @@ barplot <- ggplot(genre_counts, aes(x = reorder(genre, n), y = n, fill = genre))
     scale_fill_brewer(palette = "Set3")
 
 # Display the bar chart
-print(barplot)
+#print(barplot)
 
 # Create a word cloud of the dominant genres
 generate_wordcloud <- function(data) {
@@ -202,7 +202,7 @@ generate_wordcloud <- function(data) {
               colors = brewer.pal(8, "Dark2"))
 }
 
-generate_wordcloud(genre_counts) # use to view
+#generate_wordcloud(genre_counts) # use to view
 
 
 
