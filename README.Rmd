@@ -29,19 +29,6 @@ source("/Users/sahilbhugwan/Downloads/Data science/21075492/Q4/code/Q4.R")
 
 The first thing to look as is netfix decline 
 ```{r}
-analyze_titles <- function(data) {
-
-    titles_per_year <- data %>%
-        group_by(release_year) %>%
-        summarize(num_titles = n())
-
-
-    ggplot(titles_per_year, aes(x = release_year, y = num_titles)) +
-        geom_line() +
-        labs(x = "Year", y = "Number of Titles", title = "Trends in Number of Titles on Netflix")
-}
-
-Trends <- analyze_titles(merged_data)
 print(Trends) 
 ```
 
