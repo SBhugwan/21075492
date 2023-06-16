@@ -4,26 +4,36 @@ output: html_document
 date: "2023-06-15"
 ---
 
-```{r setup, include=FALSE}
-knitr::opts_chunk$set(echo = TRUE)
+
+
+```{r}
+suppressMessages(library(tidyverse))
+source("/Users/sahilbhugwan/Downloads/Data science/21075492/Q2/code/Q2.R")
 ```
 
-## R Markdown
+London Weather is just truly awful if you compare it to the absolutely crisp weather in Cape Town 
 
-This is an R Markdown document. Markdown is a simple formatting syntax for authoring HTML, PDF, and MS Word documents. For more details on using R Markdown see <http://rmarkdown.rstudio.com>.
+the following is to show the Max Temperature trend 
 
-When you click the **Knit** button a document will be generated that includes both content as well as the output of any embedded R code chunks within the document. You can embed an R code chunk like this:
-
-```{r cars}
-summary(cars)
+```{r}
+print(MT)
 ```
 
-## Including Plots
+Box plot 
 
-You can also embed plots, for example:
-
-```{r pressure, echo=FALSE}
-plot(pressure)
+```{r}
+Box_plot_year(London)
 ```
 
-Note that the `echo = FALSE` parameter was added to the code chunk to prevent printing of the R code that generated the plot.
+
+
+
+next i will be looking at the Precipitation level 
+
+```{r}
+print(PL)
+```
+```{r}
+print(TemP)
+```
+
