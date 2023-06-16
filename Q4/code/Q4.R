@@ -101,20 +101,6 @@ plot_average_ratings <- function(ratings_data) {
 plot_average_ratings(sorted_ratings) #use to call graph
 
 
-
-
-
-name_counts <- merged_data %>%
-    group_by(name) %>%
-    summarise(content_count = n()) %>%
-    arrange(desc(content_count))
-
-most_content <- name_counts$name[1]
-content_count <- name_counts$content_count[1]
-
-cat("The name with the most content on Netflix is", most_content, "with a count of", content_count, "titles.")
-
-
 # Names with the most content on netflix
 library(viridis)
 
@@ -157,4 +143,68 @@ plot_popularity <- function(data, actor_name) {
 plot_popularity <- purrr::partial(plot_popularity, data = merged_data)
 
 plot_popularity("Shah Rukh Khan")
+
+
+# counrties that produce the most content
+library(viridis)
+
+plot_title_count_by_country <- function(data) {
+    data %>%
+        mutate(production_countries = strsplit(production_countries, ", ")) %>%
+        unnest(production_countries) %>%
+        count(production_countries) %>%
+        arrange(desc(n)) %>%
+        top_n(10) %>%
+        ggplot(aes(x = reorder(production_countries, n), y = n, fill = production_countries)) +
+        geom_bar(stat = "identity") +
+        xlab("Country") +
+        ylab("Title Count") +
+        ggtitle("Title Count by Production Country (Top 10)") +
+        theme_minimal() +
+        theme(axis.text.x = element_text(angle = 45, hjust = 1)) +
+        scale_fill_viridis_d(option = "A", alpha = 0.8)
+}
+
+plot_title_count_by_country(merged_data)
+
+
+#Analysis genres
+library(wordcloud)
+library(tidytext)
+# Extract genres from merged_data
+genres <- merged_data %>%
+    select(genres) %>%
+    unnest_tokens(output = "genre", input = genres, token = "words") %>%
+    filter(!is.na(genre))
+
+# Count the occurrences of each genre
+genre_counts <- genres %>%
+    count(genre) %>%
+    arrange(desc(n))
+
+# Plot the bar chart of genre distribution
+barplot <- ggplot(genre_counts, aes(x = reorder(genre, n), y = n, fill = genre)) +
+    geom_bar(stat = "identity") +
+    xlab("Genre") +
+    ylab("Count") +
+    ggtitle("Genre Distribution") +
+    theme_minimal() +
+    theme(axis.text.x = element_text(angle = 45, hjust = 1)) +
+    scale_fill_brewer(palette = "Set3")
+
+# Display the bar chart
+print(barplot)
+
+# Create a word cloud of the dominant genres
+generate_wordcloud <- function(data) {
+    wordcloud(data$genre, data$n, scale = c(5, 1),
+              random.order = FALSE, rot.per = 0.3,
+              colors = brewer.pal(8, "Dark2"))
+}
+
+generate_wordcloud(genre_counts) # use to view
+
+
+
+
 

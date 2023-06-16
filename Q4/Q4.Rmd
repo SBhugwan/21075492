@@ -84,7 +84,7 @@ output:
     fig_width: 3.5 # Adjust default figure sizes. This can also be done in the chunks of the text.
     fig_height: 3.5
 abstract: |
-  Given the age of streaming launching a new streaming serives is the way to go however questions must be asked given Netflix recent decline. This will look to see in SU Streaming should lauch its own service.  
+  Given the age of streaming launching a new streaming serives is the way to go however questions must be asked given Netflix recent decline. This will look to see if SU Streaming should lauch its own service.  
 ---
 
 <!-- First: Set your default preferences for chunk options: -->
@@ -175,242 +175,26 @@ plot_popularity("Shah Rukh Khan")
 
 ```
 
-To reference the plot above, add a \`\`\\label'' after the caption in the chunk heading, as done above. Then reference the plot as such: As can be seen, Figures \ref{Figure1} and \ref{Figure2} are excellent, with Figure \ref{Figure2} being particularly aesthetically pleasing due to its device setting of Tikz. The nice thing now is that it correctly numbers all your figures (and sections or tables) and will update if it moves. The links are also dynamic.
+# Content By Country 
 
-I very strongly suggest using ggplot2 (ideally in combination with dplyr) using the ggtheme package to change the themes of your figures.
+Given that SU will be launching a streaming service in South Africa first and then branch out into the world. Given this it can be seen below that America produces the most content on netflix.
 
-Also note the information that I have placed above the chunks in the code chunks for the figures. You can edit any of these easily - visit the Rmarkdown webpage for more information.
+```{r Figure7,  warning =  FALSE, fig.align = 'center', fig.cap = "Content Produced by Country \\label{Figure1}", fig.ext = 'png', fig.height = 3, fig.width = 6}
 
-# Splitting a page
-
-You can also very easily split a page using built-in Pandoc formatting. I comment this out in the code (as this has caused issues building the pdf for some users - which I presume to be a Pandoc issue), but you are welcome to try it out yourself by commenting out the following section in your Rmd file.
-
-<!-- :::::: {.columns data-latex="[T]"} -->
-
-<!-- ::: {.column data-latex="{0.7\textwidth}"} -->
-
-<!-- ```{r, echo=FALSE, fig.width=4, fig.height=4} -->
-
-<!-- par(mar = c(4, 4, .2, .1)) -->
-
-<!-- plot(cars, pch = 19) -->
-
-<!-- ``` -->
-
-<!-- ::: -->
-
-<!-- ::: {.column data-latex="{0.05\textwidth}"} -->
-
-<!-- \ -->
-
-<!-- ::: -->
-
-<!-- ::: {.column data-latex="{0.2\textwidth}"} -->
-
-<!-- \scriptsize -->
-
-<!-- ## Data {-} -->
-
-<!-- The figure on the left-hand side shows the `cars` data. -->
-
-<!-- Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do -->
-
-<!-- eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut -->
-
-<!-- enim ad minim veniam, quis nostrud exercitation ullamco laboris -->
-
-<!-- nisi ut aliquip ex ea commodo consequat. -->
-
-<!-- ::: -->
-
-<!-- :::::: -->
-
-# Methodology \label{Meth}
-
-## Subsection
-
-Ideally do not overuse subsections. It equates to bad writing.[^1]
-
-[^1]: This is an example of a footnote by the way. Something that should also not be overused.
-
-## Math section
-
-Equations should be written as such:
-
-```{=tex}
-\begin{align}
-\beta = \sum_{i = 1}^{\infty}\frac{\alpha^2}{\sigma_{t-1}^2} \label{eq1} \\
-\int_{x = 1}^{\infty}x_{i} = 1 \notag
-\end{align}
-```
-If you would like to see the equations as you type in Rmarkdown, use \$ symbols instead (see this for yourself by adjusted the equation):
-
-$$
-\beta = \sum_{i = 1}^{\infty}\frac{\alpha^2}{\sigma_{t-1}^2} \\
-\int_{x = 1}^{\infty}x_{i} = 1
-$$
-
-Note again the reference to equation \ref{eq1}. Writing nice math requires practice. Note I used a forward slashes to make a space in the equations. I can also align equations using **&**, and set to numbering only the first line. Now I will have to type \`\`begin equation'' which is a native \LaTeX command. Here follows a more complicated equation:
-
-```{=tex}
-\begin{align}
-    y_t &= c + B(L) y_{t-1} + e_t   \label{eq2}    \\ \notag
-    e_t &= H_t^{1/2}  z_t ; \quad z_t \sim  N(0,I_N) \quad \& \quad H_t = D_tR_tD_t \\ \notag
-        D_t^2 &= {\sigma_{1,t}, \dots, \sigma_{N,t}}   \\ \notag
-        \sigma_{i,t}^2 &= \gamma_i+\kappa_{i,t}  v_{i, t-1}^2 +\eta_i  \sigma_{i, t-1}^2, \quad \forall i \\ \notag
-        R_{t, i, j} &= {diag(Q_{t, i, j}}^{-1}) . Q_{t, i, j} . diag(Q_{t, i, j}^{-1})  \\ \notag
-        Q_{t, i, j} &= (1-\alpha-\beta)  \bar{Q} + \alpha  z_t  z_t'  + \beta  Q_{t, i, j} \notag
-\end{align}
-```
-Note that in \ref{eq2} I have aligned the equations by the equal signs. I also want only one tag, and I create spaces using \`\`quads''.
-
-See if you can figure out how to do complex math using the two examples provided in \ref{eq1} and \ref{eq2}.
-
-<!-- $$ -->
-
-<!-- This is a commented out section in the writing part. -->
-
-<!-- Comments are created by highlighting text, amnd pressing CTL+C -->
-
-<!-- \\begin{align} -->
-
-<!-- \\beta = \\alpha^2 -->
-
-<!-- \end{align} -->
-
-<!-- $$ -->
-
-# Results
-
-Tables can be included as follows. Use the *xtable* (or kable) package for tables. Table placement = H implies Latex tries to place the table Here, and not on a new page (there are, however, very many ways to skin this cat. Luckily there are many forums online!).
-
-```{r ShortTable, results = 'asis'}
-
-library(xtable)
-data <- mtcars[1:5,] %>% tibble::as_tibble()
-
-table <- xtable(data, caption = "Short Table Example \\label{tab1}")
-  print.xtable(table,
-             # tabular.environment = "longtable",
-             floating = TRUE,
-             table.placement = 'H',
-             # scalebox = 0.3,
-             comment = FALSE,
-             caption.placement = 'bottom'
-             )
+plot_title_count_by_country(merged_data)
 
 ```
 
-To reference calculations **in text**, *do this:* From table \ref{tab1} we see the average value of mpg is `r mean(mtcars[1:5,]$mpg)`.
+Therefore for SU to be unique it should potential look to produce it own unique content.
 
-Including tables that span across pages, use the following (note that I add below the table: \`\`continue on the next page''). This is a neat way of splitting your table across a page.
+What SU could possible do is look as genres that have the most dominate genres
 
-Use the following default settings to build your own possibly long tables. Note that the following will fit on one page if it can, but cleanly spreads over multiple pages:
+```{r Figure8,  warning =  FALSE, fig.align = 'center', fig.cap = "Word cloud most dominate genres \\label{Figure2}", fig.ext = 'png', fig.height = 3, fig.width = 6}
 
-```{r LongTable, results = 'asis'}
-
-library(xtable)
-
-data = mtcars %>% tibble::as_tibble()
-  addtorow          <- list()
-  addtorow$pos      <- list()
-  addtorow$pos[[1]] <- c(0)
-  addtorow$command  <- c(paste("\\hline \n",
-                               "\\endhead \n",
-                               "\\hline \n",
-                               "{\\footnotesize Continued on next page} \n",
-                               "\\endfoot \n",
-                               "\\endlastfoot \n",sep=""))
-table <- xtable(data, caption = "Long Table Example")
-  print.xtable(table,
-             tabular.environment = "longtable",
-             floating = FALSE, # Leave this as is.
-             table.placement = 'H', # Leave this as is.
-             booktabs = T, # Aesthetics
-             include.rownames = FALSE,  # Typically you don't want this in a table.
-             add.to.row = addtorow, # For adding the Continued on next page part...
-             comment = FALSE,
-             caption.placement = 'top',  # Where do you want the caption?
-             size="\\fontsize{12pt}{13pt}\\selectfont"  # Size of text in table..
-             )
-# See https://cran.r-project.org/web/packages/xtable/vignettes/xtableGallery.pdf for table inspiration
-```
-
-\hfill
-
-<!-- hfill can be used to create a space, like here between text and table. -->
-
-## Huxtable
-
-Huxtable is a very nice package for making working with tables between Rmarkdown and Tex easier.
-
-This cost some adjustment to the Tex templates to make it work, but it now works nicely.
-
-See documentation for this package [here](https://hughjonesd.github.io/huxtable/huxtable.html). A particularly nice addition of this package is for making the printing of regression results a joy (see [here](https://hughjonesd.github.io/huxtable/huxtable.html#creating-a-regression-table)). Here follows an example:
-
-If you are eager to use huxtable, comment out the Huxtable table in the Rmd template, and uncomment the colortbl package in your Rmd's root.
-
-Note that I do not include this in the ordinary template, as some latex users have complained it breaks when they build their Rmds (especially those using tidytex - I don't have this problem as I have the full Miktex installed on mine). Up to you, but I strongly recommend installing the package manually and using huxtable. To make this work, uncomment the *Adding additional latex packages* part in yaml at the top of the Rmd file. Then comment out the huxtable example in the template below this line. Reknit, and enjoy.
-
-```{r, results = 'asis'}
-
-if(!require(huxtable)) install.packages(huxtable)
-library(huxtable)
-data(diamonds, package = 'ggplot2')
-Title <- "Regression Output"
-Label <- "Reg01"
-lm1 <- lm(price ~ carat, diamonds)
-lm2 <- lm(price ~ depth, diamonds)
-lm3 <- lm(price ~ carat + depth, diamonds)
-htab <-
-huxreg(lm1, lm2, lm3,
-                statistics = c(N = "nobs", R2 = "r.squared"),
-                note = "%stars%.") %>%
-  set_caption(Title) %>%
-  set_label(Label)
-# More settings:
-font_size(htab) <- 12
-# Let's change regression names: this is slightly hacky, but works. Comment out this section to see what the default looks like:
-  Names <- c( "Reg1", "Reg2", "Reg3")
-  for(i in 1:length(Names)) {
-    htab[1,][[1+i]] <- Names[i]
-  }
-# Now simply call the table:
-htab
+generate_wordcloud(genre_counts)
 
 ```
 
-FYI - R also recently introduced the gt package, which is worthwhile exploring too.
+Therefore it can bee see that drama and comedy are the most popular content on netflix
 
-# Lists
-
-To add lists, simply using the following notation
-
--   This is really simple
-
-    -   Just note the spaces here - writing in R you have to sometimes be pedantic about spaces...
-
--   Note that Rmarkdown notation removes the pain of defining \LaTeX environments!
-
-# Conclusion
-
-I hope you find this template useful. Remember, stackoverflow is your friend - use it to find answers to questions. Feel free to write me a mail if you have any questions regarding the use of this package. To cite this package, simply type citation("Texevier") in Rstudio to get the citation for @Texevier (Note that uncited references in your bibtex file will not be included in References).
-
-<!-- Make title of bibliography here: -->
-
-<!-- \newpage -->
-
-\newpage
-
-# References {.unnumbered}
-
-::: {#refs}
-:::
-
-# Appendix {.unnumbered}
-
-## Appendix A {.unnumbered}
-
-Some appendix information here
-
-## Appendix B {.unnumbered}
+# Conclusion 
