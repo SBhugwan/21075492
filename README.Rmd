@@ -16,7 +16,7 @@ suppressMessages(library(wordcloud))
 ```
 
 
-#Question 2 
+# Question 2 
 
 ```{r message=FALSE, warning=FALSE}
 source("/Users/sahilbhugwan/Downloads/Data science/21075492/Q2/code/Q2.R")
@@ -33,7 +33,44 @@ print(TemP)
 ```
 
 
-#Question 4 
+# Question 3 
+Here we will be comparing two of the longst bands that being Coldplay and Metallica
+
+```{r message=FALSE, warning=FALSE}
+source("/Users/sahilbhugwan/Downloads/Data science/21075492/Q3/code/Q3.R")
+```
+
+
+Coldplay popular songs 
+```{r}
+PS(CP)
+```
+
+Metallica popular songs 
+```{r}
+PS(metallica)
+```
+
+Comparing song Durations 
+
+```{r}
+print(DS)
+```
+
+
+Correlation matrix based on danceability, energy, instrumentalness, liveness, loudness, speechiness & tempo
+
+```{r}
+corrplot(CMCP, method = "color") #Coldplay
+
+corrplot::corrplot(CMM, method = "color", col = colorRampPalette(c("blue", "white", "red"))(10)) #Metallica
+```
+
+
+
+
+
+# Question 4 
 What works in Streaming service if SU lauches its own one 
 The full pdf report can be found in Q4 folder.
 
@@ -65,7 +102,7 @@ plot_top_names(merged_data)
 Therefore if SU wants to launch its own streamig service it should look to produce movies that are drama or comdey based and include a high profile actor/actress. 
 
 
-#Question 5 
+# Question 5 
 
 Here i will be looking at app size
 

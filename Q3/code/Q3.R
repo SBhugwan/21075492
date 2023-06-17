@@ -72,25 +72,25 @@ PS <- function(df, release_date_filter = NULL, popularity_filter = NULL) {
     list(cold_pop = cold_pop, order = order)
 }
 
-PS(metallica)
+#PS(metallica)
 #PS(CP)
 #PS(metallica)
 
-PS(metallica)
+#PS(metallica)
 #coldplay Correlation matrix
 library(corrplot)
 CMCP<- CP %>%
     select(danceability, energy, instrumentalness, liveness, loudness, speechiness, tempo) %>%
     cor()
 
-corrplot(CMCP, method = "color")
+#corrplot(CMCP, method = "color")
 
 #Mettallica correlation matrix
 
 CMM<- metallica%>%
     select(danceability, energy, instrumentalness, liveness, loudness, speechiness, tempo) %>%
     cor()
-corrplot::corrplot(CMM, method = "color", col = colorRampPalette(c("blue", "white", "red"))(10))
+#corrplot::corrplot(CMM, method = "color", col = colorRampPalette(c("blue", "white", "red"))(10))
 
 
 #Spotify data
