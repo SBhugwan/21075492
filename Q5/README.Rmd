@@ -4,7 +4,7 @@ output: html_document
 date: "2023-06-17"
 ---
 
-```{r}
+```{r message=FALSE, warning=FALSE}
 suppressMessages(library(tidyverse))
 
 source("/Users/sahilbhugwan/Downloads/Data science/21075492/Q5/code/Q5.R")
@@ -13,33 +13,33 @@ source("/Users/sahilbhugwan/Downloads/Data science/21075492/Q5/code/Q5.R")
 
 
 App ratings 
-```{r}
+```{r message=FALSE, warning=FALSE}
 APR
 ```
 App ratings per content 
-```{r}
+```{r message=FALSE, warning=FALSE}
 Ratings
 ```
 
 App rating compared to last updated 
-```{r}
+```{r message=FALSE, warning=FALSE}
 ARLU
 ```
 App Size compared to rating 
-```{r}
+```{r message=FALSE, warning=FALSE}
 ARS
 ```
 
 User Reviews 
 
-```{r}
+```{r message=FALSE, warning=FALSE}
 wordcloud(term_frequency$word, term_frequency$n, scale = c(5, 0.5), max.words = 100, random.order = FALSE,
           color = brewer.pal(8, "Set2"))
 ```
  
  App Sentiment 
  
-```{r}
+```{r message=FALSE, warning=FALSE}
 SDA
 ```
  
