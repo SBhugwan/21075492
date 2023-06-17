@@ -1,9 +1,9 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023) (preloaded format=pdflatex 2023.6.13)  17 JUN 2023 16:39
+This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023) (preloaded format=pdflatex 2023.6.13)  17 JUN 2023 16:38
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
-**Q1.tex
-(./Q1.tex
+**Q2.tex
+(./Q2.tex
 LaTeX2e <2023-06-01>
 L3 programming layer <2023-06-05>
 (/Users/sahilbhugwan/Library/TinyTeX/texmf-dist/tex/latex/elsarticle/elsarticle.cls
@@ -23,8 +23,8 @@ Package: etoolbox 2020/10/05 v2.5k e-TeX tools for LaTeX (JAW)
 \@bls=\dimen140
 (/Users/sahilbhugwan/Library/TinyTeX/texmf-dist/tex/latex/base/article.cls
 Document Class: article 2023/05/17 v1.4n Standard LaTeX document class
-(/Users/sahilbhugwan/Library/TinyTeX/texmf-dist/tex/latex/base/size12.clo
-File: size12.clo 2023/05/17 v1.4n Standard LaTeX file (size option)
+(/Users/sahilbhugwan/Library/TinyTeX/texmf-dist/tex/latex/base/size11.clo
+File: size11.clo 2023/05/17 v1.4n Standard LaTeX file (size option)
 )
 \c@part=\count187
 \c@section=\count188
@@ -75,7 +75,7 @@ File: pdftex.def 2022/09/22 v1.2b Graphics/color driver for pdftex
 \@enLab=\toks19
 \@sep=\skip50
 \@@sep=\skip51
-(/Users/sahilbhugwan/Library/TinyTeX/texmf-dist/tex/latex/natbib/natbib.sty
+(./Q2.spl) (/Users/sahilbhugwan/Library/TinyTeX/texmf-dist/tex/latex/natbib/natbib.sty
 Package: natbib 2010/09/13 8.31b (PWD, AO)
 \bibhang=\skip52
 \bibsep=\skip53
@@ -83,7 +83,7 @@ LaTeX Info: Redefining \cite on input line 694.
 \c@NAT@ctr=\count267
 )
 \splwrite=\write3
-\openout3 = `Q1.spl'.
+\openout3 = `Q2.spl'.
 
 \appnamewidth=\dimen147
 ) (/Users/sahilbhugwan/Library/TinyTeX/texmf-dist/tex/latex/lm/lmodern.sty
@@ -519,8 +519,8 @@ Package caption Info: longtable package is loaded.
 Package: ltcaption 2021/01/08 v1.4c longtable captions (AR)
 ))
 \cslhangindent=\skip81
-No file Q1.aux.
-\openout1 = `Q1.aux'.
+(./Q2.aux)
+\openout1 = `Q2.aux'.
 
 LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 166.
 LaTeX Font Info:    ... okay on input line 166.
@@ -565,9 +565,9 @@ File: epstopdf-sys.cfg 2010/07/13 v1.3 Configuration of (r)epstopdf for TeX Live
 * \topmargin=-38.1381pt
 * \headheight=12.0pt
 * \headsep=25.0pt
-* \topskip=12.0pt
+* \topskip=11.0pt
 * \footskip=30.0pt
-* \marginparwidth=44.0pt
+* \marginparwidth=59.0pt
 * \marginparsep=10.0pt
 * \columnsep=10.0pt
 * \skip\footins=24.0pt
@@ -588,59 +588,86 @@ File: color.cfg 2016/01/02 v1.6 sample color configuration
 Package color Info: Driver file: pdftex.def on input line 149.
 (/Users/sahilbhugwan/Library/TinyTeX/texmf-dist/tex/latex/graphics/mathcolor.ltx))
 Package hyperref Info: Link coloring ON on input line 166.
+(./Q2.out) (./Q2.out)
 \@outlinefile=\write4
-\openout4 = `Q1.out'.
+\openout4 = `Q2.out'.
 
 Package caption Info: Begin \AtBeginDocument code.
 Package caption Info: End \AtBeginDocument code.
-LaTeX Font Info:    Trying to load font information for OT1+lmr on input line 211.
+LaTeX Font Info:    Trying to load font information for OT1+lmr on input line 228.
 (/Users/sahilbhugwan/Library/TinyTeX/texmf-dist/tex/latex/lm/ot1lmr.fd
 File: ot1lmr.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
 )
-LaTeX Font Info:    Trying to load font information for OML+lmm on input line 211.
+LaTeX Font Info:    Trying to load font information for OML+lmm on input line 228.
 (/Users/sahilbhugwan/Library/TinyTeX/texmf-dist/tex/latex/lm/omllmm.fd
 File: omllmm.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
 )
-LaTeX Font Info:    Trying to load font information for OMS+lmsy on input line 211.
+LaTeX Font Info:    Trying to load font information for OMS+lmsy on input line 228.
 (/Users/sahilbhugwan/Library/TinyTeX/texmf-dist/tex/latex/lm/omslmsy.fd
 File: omslmsy.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
 )
-LaTeX Font Info:    Trying to load font information for OMX+lmex on input line 211.
+LaTeX Font Info:    Trying to load font information for OMX+lmex on input line 228.
 (/Users/sahilbhugwan/Library/TinyTeX/texmf-dist/tex/latex/lm/omxlmex.fd
 File: omxlmex.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
 )
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <10> on input line 211.
+(Font)              <9> on input line 228.
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <7> on input line 211.
+(Font)              <6> on input line 228.
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <5> on input line 211.
-LaTeX Font Info:    Trying to load font information for U+msa on input line 211.
+(Font)              <5> on input line 228.
+LaTeX Font Info:    Trying to load font information for U+msa on input line 228.
 (/Users/sahilbhugwan/Library/TinyTeX/texmf-dist/tex/latex/amsfonts/umsa.fd
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 )
-LaTeX Font Info:    Trying to load font information for U+msb on input line 211.
+LaTeX Font Info:    Trying to load font information for U+msb on input line 228.
 (/Users/sahilbhugwan/Library/TinyTeX/texmf-dist/tex/latex/amsfonts/umsb.fd
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 )
+LaTeX Font Info:    Trying to load font information for T1+lmtt on input line 228.
+(/Users/sahilbhugwan/Library/TinyTeX/texmf-dist/tex/latex/lm/t1lmtt.fd
+File: t1lmtt.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
+)
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <14> on input line 211.
+(Font)              <10.95> on input line 228.
+LaTeX Font Info:    External font `lmex10' loaded for size
+(Font)              <8> on input line 228.
 
-! LaTeX Error: Environment Shaded undefined.
+LaTeX Warning: Reference `Meth' on page 1 undefined on input line 281.
 
-See the LaTeX manual or LaTeX Companion for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.254 \begin{Shaded}
-                     
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `\@ifnextchar' on input line 282.
+
+[1
+
+
+{/Users/sahilbhugwan/Library/TinyTeX/texmf-var/fonts/map/pdftex/updmap/pdftex.map}{/Users/sahilbhugwan/Library/TinyTeX/texmf-dist/fonts/enc/dvips/lm/lm-ec.enc}{/Users/sahilbhugwan/Library/TinyTeX/texmf-dist/fonts/enc/dvips/lm/lm-mathsy.enc}]
+No file Q2.bbl.
+[2] (./Q2.aux)
+ ***********
+LaTeX2e <2023-06-01>
+L3 programming layer <2023-06-05>
+ ***********
+
+LaTeX Warning: There were undefined references.
+
+Package rerunfilecheck Info: File `Q2.out' has not changed.
+(rerunfilecheck)             Checksum: 85DB09922D29FD7E0C8FA60D9CEAB10E;175.
+ ) 
 Here is how much of TeX's memory you used:
- 15957 strings out of 477695
- 294325 string characters out of 5830216
- 1853759 words of memory out of 5000000
- 36224 multiletter control sequences out of 15000+600000
- 560734 words of font info for 65 fonts, out of 8000000 for 9000
+ 16063 strings out of 477695
+ 295657 string characters out of 5830216
+ 1864759 words of memory out of 5000000
+ 36296 multiletter control sequences out of 15000+600000
+ 571016 words of font info for 73 fonts, out of 8000000 for 9000
  14 hyphenation exceptions out of 8191
- 75i,8n,79p,539b,850s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ 75i,11n,79p,539b,894s stack positions out of 10000i,1000n,20000p,200000b,200000s
+</Users/sahilbhugwan/Library/TinyTeX/texmf-dist/fonts/type1/public/lm/lmbx10.pfb></Users/sahilbhugwan/Library/TinyTeX/texmf-dist/fonts/type1/public/lm/lmbx9.pfb></Users/sahilbhugwan/Library/TinyTeX/texmf-dist/fonts/type1/public/lm/lmr10.pfb></Users/sahilbhugwan/Library/TinyTeX/texmf-dist/fonts/type1/public/lm/lmr12.pfb></Users/sahilbhugwan/Library/TinyTeX/texmf-dist/fonts/type1/public/lm/lmr8.pfb></Users/sahilbhugwan/Library/TinyTeX/texmf-dist/fonts/type1/public/lm/lmr9.pfb></Users/sahilbhugwan/Library/TinyTeX/texmf-dist/fonts/type1/public/lm/lmri10.pfb></Users/sahilbhugwan/Library/TinyTeX/texmf-dist/fonts/type1/public/lm/lmri7.pfb></Users/sahilbhugwan/Library/TinyTeX/texmf-dist/fonts/type1/public/lm/lmri9.pfb></Users/sahilbhugwan/Library/TinyTeX/texmf-dist/fonts/type1/public/lm/lmsy6.pfb></Users/sahilbhugwan/Library/TinyTeX/texmf-dist/fonts/type1/public/lm/lmtt9.pfb>
+Output written on Q2.pdf (2 pages, 233454 bytes).
+PDF statistics:
+ 99 PDF objects out of 1000 (max. 8388607)
+ 72 compressed objects within 1 object stream
+ 13 named destinations out of 1000 (max. 500000)
+ 17 words of extra memory for PDF output out of 10000 (max. 10000000)
 
-!  ==> Fatal error occurred, no output PDF file produced!
