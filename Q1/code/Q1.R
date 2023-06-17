@@ -31,7 +31,7 @@ AVD<- ggplot() +
           legend.title = element_blank(),
           legend.text = element_text(size = 10),
           legend.position = "bottom",
-          panel.grid.major = element_blank(),
+          panel.grid.major = element_line(color = "gray", linetype = "dashed"),
           panel.grid.minor = element_blank(),
           panel.border = element_blank(),
           plot.margin = margin(20, 30, 20, 20, "pt"))
@@ -65,7 +65,7 @@ TP<- ggplot() +
     geom_line(data = other_regions_testing_rates, aes(x = date, y = new_tests_per_thousand, color = "Other Regions"), size = 1.2) +
     labs(x = "Date",
          y = "New Tests per Thousand",
-         title = "Testing Rates: Africa vs. Other Regions") +
+         title = "Testing and Positivity rates ") +
     scale_color_manual(values = c("Africa" = "turquoise", "Other Regions" = "violet")) +
     theme_minimal() +
     theme(plot.title = element_text(size = 16, face = "bold"),
@@ -213,6 +213,9 @@ SHFICU<- ggplot(hospital_icu_data_long, aes(x = date, y = `Cumulative per Millio
 #Impact of intervention
 library(scales)
 
+african_data <- covid %>% filter(continent == "Africa")
+other_data <- covid %>% filter(continent != "Africa")
+
 SI<- ggplot() +
     geom_point(data = african_data, aes(x = stringency_index, y = total_cases_per_million, color = "Africa"), size = 3) +
     geom_point(data = other_data, aes(x = stringency_index, y = total_cases_per_million, color = "Other Regions"), size = 3) +
@@ -231,7 +234,7 @@ SI<- ggplot() +
           legend.position = "bottom",
           legend.key.size = unit(1, "cm"))
 
-SI
+#SI
 
 C19 <- covid %>%
     mutate(date = as.Date(date),
