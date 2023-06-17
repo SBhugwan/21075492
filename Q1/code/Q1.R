@@ -219,7 +219,7 @@ other_data <- covid %>% filter(continent != "Africa")
 SI<- ggplot() +
     geom_point(data = african_data, aes(x = stringency_index, y = total_cases_per_million, color = "Africa"), size = 3) +
     geom_point(data = other_data, aes(x = stringency_index, y = total_cases_per_million, color = "Other Regions"), size = 3) +
-    labs(title = "Impact of Interventions: Stringency Index vs. Total Cases per Million",
+    labs(title = "Impact of Interventions: Stringency Index",
          x = "Stringency Index",
          y = "Total Cases per Million",
          color = "Region") +
