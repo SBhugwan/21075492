@@ -18,17 +18,17 @@ suppressMessages(library(wordcloud))
 
 #Question 2 
 
-```{r}
+```{r message=FALSE, warning=FALSE}
 source("/Users/sahilbhugwan/Downloads/Data science/21075492/Q2/code/Q2.R")
 ```
 Line chart for Max tempretures over the years 
 
-```{r}
+```{r message=FALSE, warning=FALSE}
  print(MT)
 ```
 
 scatter plot for temperature vs. precipitation
-```{r}
+```{r message=FALSE, warning=FALSE}
 print(TemP)
 ```
 
@@ -63,3 +63,48 @@ plot_top_names(merged_data)
 ```
 
 Therefore if SU wants to launch its own streamig service it should look to produce movies that are drama or comdey based and include a high profile actor/actress. 
+
+
+#Question 5 
+
+Here i will be looking at app size
+
+```{r message=FALSE, warning=FALSE}
+
+source("/Users/sahilbhugwan/Downloads/Data science/21075492/Q5/code/Q5.R")
+```
+
+
+App ratings
+
+```{r message=FALSE, warning=FALSE}
+APR
+```
+App ratings per content
+```{r message=FALSE, warning=FALSE}
+Ratings
+```
+
+
+App rating compared to last updated
+```{r message=FALSE, warning=FALSE}
+ARLU
+```
+
+App Size compared to rating
+```{r message=FALSE, warning=FALSE}
+ARS
+```
+
+User Reviews
+
+```{r message=FALSE, warning=FALSE}
+wordcloud(term_frequency$word, term_frequency$n, scale = c(5, 0.5), max.words = 100, random.order = FALSE,
+          color = brewer.pal(8, "Set2"))
+```
+
+App Sentiment
+```{r message=FALSE, warning=FALSE}
+SDA
+```
+
