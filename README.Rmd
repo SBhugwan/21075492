@@ -12,7 +12,54 @@ suppressMessages(library(tidyverse))
 suppressMessages(library(tinytex))
 suppressMessages(library(viridis))
 suppressMessages(library(wordcloud))
+suppressMessages(library(RColorBrewer))
 
+```
+
+
+# Question 1
+
+```{r message=FALSE, warning=FALSE}
+source("/Users/sahilbhugwan/Downloads/Data science/21075492/Q1/code/Q1.R")
+
+```
+
+Comparing average deaths in Africa to Europe
+```{r message=FALSE, warning=FALSE}
+AVD
+```
+
+
+Testing and positivity rates in Africa compared to other regions
+
+```{r message=FALSE, warning=FALSE}
+TP
+```
+
+
+healthcare capacity : ICU patients
+
+```{r message=FALSE, warning=FALSE}
+HCC
+```
+
+
+Perform analysis based on life expectancy
+
+```{r message=FALSE, warning=FALSE}
+LE
+
+```
+
+Hospitalization Facilities vs. ICU Admissions
+```{r message=FALSE, warning=FALSE}
+HFvICU
+```
+
+Impact of intervention
+
+```{r message=FALSE, warning=FALSE}
+SI
 ```
 
 
