@@ -20,9 +20,21 @@ europe_avg_deaths <- europe_data %>% group_by(date) %>% summarize(avg_deaths = m
 AVD<- ggplot() +
     geom_line(data = africa_avg_deaths, aes(x = date, y = avg_deaths, color = "Africa"), size = 1.2) +
     geom_line(data = europe_avg_deaths, aes(x = date, y = avg_deaths, color = "Europe"), size = 1.2) +
-    labs(x = "Date", y = "Average Deaths", title = "Average Deaths in Africa and Europe") +
-    scale_color_manual(values = c("Africa" = "blue", "Europe" = "red")) +
-    theme_minimal()
+    labs(x = "Date",
+         y = "Average Deaths",
+         title = "Average Deaths in Africa and Europe") +
+    scale_color_manual(values = c("Africa" = "purple", "Europe" = "maroon")) +
+    theme_minimal() +
+    theme(plot.title = element_text(size = 16, face = "bold"),
+          axis.title = element_text(size = 12),
+          axis.text = element_text(size = 10),
+          legend.title = element_blank(),
+          legend.text = element_text(size = 10),
+          legend.position = "bottom",
+          panel.grid.major = element_blank(),
+          panel.grid.minor = element_blank(),
+          panel.border = element_blank(),
+          plot.margin = margin(20, 30, 20, 20, "pt"))
 #AVD
 
 ##testing and positivity rates in Africa compared to other regions
@@ -51,9 +63,22 @@ other_regions_testing_rates <- other_regions_data %>%
 TP<- ggplot() +
     geom_line(data = africa_testing_rates, aes(x = date, y = new_tests_per_thousand, color = "Africa"), size = 1.2) +
     geom_line(data = other_regions_testing_rates, aes(x = date, y = new_tests_per_thousand, color = "Other Regions"), size = 1.2) +
-    labs(x = "Date", y = "New Tests per Thousand", title = "Testing Rates: Africa vs. Other Regions") +
-    scale_color_manual(values = c("Africa" = "blue", "Other Regions" = "red")) +
-    theme_minimal()
+    labs(x = "Date",
+         y = "New Tests per Thousand",
+         title = "Testing Rates: Africa vs. Other Regions") +
+    scale_color_manual(values = c("Africa" = "turquoise", "Other Regions" = "violet")) +
+    theme_minimal() +
+    theme(plot.title = element_text(size = 16, face = "bold"),
+          axis.title = element_text(size = 12),
+          axis.text = element_text(size = 10),
+          legend.title = element_blank(),
+          legend.text = element_text(size = 10),
+          legend.position = "bottom",
+          panel.grid.major = element_line(color = "gray", linetype = "dashed"),
+          panel.grid.minor = element_blank(),
+          panel.border = element_blank(),
+          plot.margin = margin(20, 30, 20, 20, "pt"))
+
 #TP
 
 ##Exploring health care capacity
@@ -76,22 +101,68 @@ other_regions_healthcare_capacity <- other_regions_data %>%
 HB<-ggplot() +
     geom_line(data = africa_healthcare_capacity, aes(x = date, y = hospital_beds_per_thousand, color = "Africa"), size = 1.2) +
     geom_line(data = other_regions_healthcare_capacity, aes(x = date, y = hospital_beds_per_thousand, color = "Other Regions"), size = 1.2) +
-    labs(x = "Date", y = "Hospital Beds per Thousand", title = "Healthcare Capacity: Hospital Beds per Thousand") +
-    scale_color_manual(values = c("Africa" = "blue", "Other Regions" = "red")) +
-    theme_minimal()
+    labs(x = "Date",
+         y = "Hospital Beds per Thousand",
+         title = "Healthcare Capacity: Hospital Beds per Thousand") +
+    scale_color_manual(values = c("Africa" = brewer.pal(8, "Set1")[1], "Other Regions" = brewer.pal(8, "Set1")[2])) +
+    theme_minimal() +
+    theme(plot.title = element_text(size = 16, face = "bold"),
+          axis.title = element_text(size = 12),
+          axis.text = element_text(size = 10),
+          legend.title = element_blank(),
+          legend.text = element_text(size = 10),
+          legend.position = "bottom",
+          panel.grid.major = element_line(color = "gray", linetype = "dashed"),
+          panel.grid.minor = element_blank(),
+          panel.border = element_blank(),
+          plot.margin = margin(20, 30, 20, 20, "pt"))
 
 #healthcare capacity : ICU patients
 HCC<- ggplot() +
     geom_line(data = africa_healthcare_capacity, aes(x = date, y = icu_patients, color = "Africa"), size = 1.2) +
     geom_line(data = other_regions_healthcare_capacity, aes(x = date, y = icu_patients, color = "Other Regions"), size = 1.2) +
     labs(x = "Date", y = "ICU Patients", title = "Healthcare Capacity: ICU Patients") +
-    scale_color_manual(values = c("Africa" = "blue", "Other Regions" = "red")) +
+    scale_color_manual(values = c("Africa" = "yellow", "Other Regions" = "maroon")) +
     theme_minimal()
 
-HCC
+#HCC
 
 #2#
 
+filtered_data <- covid %>%
+    select(location, total_deaths_per_million, extreme_poverty, life_expectancy)
+filtered_data <- filtered_data %>%
+    mutate(poverty_level = ifelse(extreme_poverty >= 10, "High Poverty", "Low Poverty"))
+
+# Perform analysis based on extreme poverty levels
+EPL <- ggplot(filtered_data, aes(x = poverty_level, y = total_deaths_per_million, fill = poverty_level)) +
+    geom_boxplot() +
+    labs(title = "Severity of Covid Experience by Extreme Poverty Level",
+         x = "Extreme Poverty Level",
+         y = "Total Deaths per Million",
+         fill = "Extreme Poverty Level") +
+    theme_minimal() +
+    theme(plot.title = element_text(size = 14, face = "bold"),
+          axis.title.x = element_text(size = 12, face = "bold"),
+          axis.title.y = element_text(size = 12, face = "bold"),
+          axis.text.x = element_text(size = 10),
+          axis.text.y = element_text(size = 10),
+          legend.title = element_text(size = 10),
+          legend.text = element_text(size = 10))
+
+# Perform analysis based on life expectancy
+LE<- ggplot(filtered_data, aes(x = life_expectancy, y = total_deaths_per_million)) +
+    geom_point(shape = 16, color = "black", size = 3, alpha = 0.7) +
+    geom_smooth(method = "lm", se = FALSE, color = "red") +
+    labs(title = "Severity of Covid Experience by Life Expectancy",
+         x = "Life Expectancy",
+         y = "Total Deaths per Million") +
+    theme_minimal() +
+    theme(plot.title = element_text(size = 14, face = "bold"),
+          axis.title.x = element_text(size = 12, face = "bold"),
+          axis.title.y = element_text(size = 12, face = "bold"),
+          axis.text.x = element_text(size = 10),
+          axis.text.y = element_text(size = 10))
 
 
 #3#
@@ -138,6 +209,29 @@ SHFICU<- ggplot(hospital_icu_data_long, aes(x = date, y = `Cumulative per Millio
     theme(axis.text.x = element_text(angle = 45, hjust = 1))
 
 #Extra
+
+#Impact of intervention
+library(scales)
+
+SI<- ggplot() +
+    geom_point(data = african_data, aes(x = stringency_index, y = total_cases_per_million, color = "Africa"), size = 3) +
+    geom_point(data = other_data, aes(x = stringency_index, y = total_cases_per_million, color = "Other Regions"), size = 3) +
+    labs(title = "Impact of Interventions: Stringency Index vs. Total Cases per Million",
+         x = "Stringency Index",
+         y = "Total Cases per Million",
+         color = "Region") +
+    scale_color_manual(values = c("Africa" = "#1f77b4", "Other Regions" = "#ff7f0e")) +
+    scale_y_continuous(labels = comma) +
+    theme_minimal() +
+    theme(plot.title = element_text(size = 16, face = "bold"),
+          axis.title = element_text(size = 12),
+          axis.text = element_text(size = 10),
+          legend.title = element_text(size = 12),
+          legend.text = element_text(size = 10),
+          legend.position = "bottom",
+          legend.key.size = unit(1, "cm"))
+
+SI
 
 C19 <- covid %>%
     mutate(date = as.Date(date),
