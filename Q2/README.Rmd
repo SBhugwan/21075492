@@ -3,28 +3,39 @@ title: "Question 2"
 output:
   pdf_document: default
   html_document: default
-date: "2023-06-15"
+date: "2023-06-17"
 ---
 
 
 
-```{r}
+```{r message=FALSE, warning=FALSE}
 suppressMessages(library(tidyverse))
 source("/Users/sahilbhugwan/Downloads/Data science/21075492/Q2/code/Q2.R")
 ```
 
 London Weather is just truly awful if you compare it to the absolutely crisp weather in Cape Town 
 
-the following is to show the Max Temperature trend 
+The following is to show the Max Temperature trend as well as sun duration 
 
-```{r}
+```{r message=FALSE, warning=FALSE}
 print(MT)
+print(SD)
 ```
+
 
 Box plot 
 
-```{r}
+```{r message=FALSE, warning=FALSE}
 Box_plot_year(London)
+```
+
+# Analysis 
+
+It can be clearly seen that the average temperatures in the UK has had a stedy decline. As well as the fact that there is a clear trend that the temperatures remain relatively stable over time and don't fluctuate much. To further look at this we will look at the number of days where the max temperature has been greater than 32.2 degrees Celsius and as well the amount of days where it has been less than 21.1 degrees Celsius
+
+```{r}
+L21
+M32
 ```
 
 
@@ -32,10 +43,17 @@ Box_plot_year(London)
 
 next i will be looking at the Precipitation level 
 
-```{r}
+```{r message=FALSE, warning=FALSE}
 print(PL)
 ```
-```{r}
+```{r message=FALSE, warning=FALSE}
 print(TemP)
 ```
 
+# Analysis 
+
+we can clealry see that the UK experience a fair bit of rain. given that we saw that the average temperatures range from 10- 15 degress we can also see that during that temperature there is consistent rain. 
+
+# Conculsion 
+
+Contrary to my friends belief the average temperatures in the UK tend to be relatively stable between the 10- 15 degress. However when the temperetures are in that range we can clearly see that there it is generally consistent precipitation. However it should be noted that the UK experiences winter for majority of the year and if we had to compare it to Cape Town, where Cape Town also experiences its rainy season during winter. It could be fair to say that it is failry similar. 

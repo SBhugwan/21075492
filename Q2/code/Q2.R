@@ -106,4 +106,38 @@ Box_plot_year(London)
 
 
 
+# using UK data
+
+# Number of Days max Temp less than 21.1 degrees Celsius
+
+temperature_data <- UK[, c("DATE", "TMAX", "TMIN", "DX70", "DX90")]
+temperature_data$DATE <- as.Date(paste0(temperature_data$DATE, "-01"))
+average_temperature_monthly <- aggregate(cbind(TMAX, TMIN) ~ format(DATE, "%Y-%m"), data = temperature_data, FUN = mean)
+maximum_temperature_monthly <- aggregate(TMAX ~ format(DATE, "%Y-%m"), data = temperature_data, FUN = max)
+minimum_temperature_monthly <- aggregate(TMIN ~ format(DATE, "%Y-%m"), data = temperature_data, FUN = min)
+filtered_data2 <- temperature_data[format(temperature_data$DATE, "%Y") >= "1990", ]
+
+
+L21 <- ggplot(filtered_data2, aes(x = format(DATE, "%Y"), y = DX70)) +
+    geom_bar(stat = "identity", color = "blue", fill = "blue", width = 0.5) +
+    labs(x = "Year", y = "Number of Days", title = "Number of Days with Max Temperature < 21.1°C") +
+    theme_bw() +
+    theme(axis.text.x = element_text(angle = 45, hjust = 1),
+          plot.title = element_text(face = "bold", size = 14),
+          axis.title = element_text(face = "bold", size = 12),
+          axis.text = element_text(size = 10),
+          panel.grid.major = element_blank(),
+          panel.grid.minor = element_blank())
+
+
+#L21
+
+M32<- ggplot(filtered_data2, aes(x = format(DATE, "%Y"), y = DX90)) +
+    geom_bar(stat = "identity", color = "red", fill = "red", width = 0.5) +
+    labs(x = "Year", y = "Number of Days", title = "Number of days with maximum temperature > 32.2 degrees Celsius") +
+    theme_bw() +
+    theme(axis.text.x = element_text(angle = 45, hjust = 1))
+#M32
+
+
 
