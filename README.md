@@ -1,6 +1,6 @@
 Data Science Test
 ================
-2023-06-15
+2023-06-16
 
 # The purpose of this README is to show my solutions to the Data science 871 exam.
 
@@ -14,11 +14,27 @@ suppressMessages(library(wordcloud))
 suppressMessages(library(RColorBrewer))
 ```
 
+The next thing I did was create this folder, specifically the
+21075492.Rproj and corresponding folders, as well as the sub-directories
+for each question. These also have their own projects. Within those
+folders you will find, amongst other things, a) pdfs with the answers to
+the relevant questions, b) a code folder.
+
 # Question 1
+
+This question was with regards to the COVID-19 Pandemic. I answered this
+question in three parts
 
 ``` r
 source("/Users/sahilbhugwan/Downloads/Data science/21075492/Q1/code/Q1.R")
 ```
+
+First: i looked at how Africa countries did compared to different
+regions. My thinking was i would look at the average deaths in Africa
+compared to Europe. This is because Africa is generally considered to be
+a third world country compared that to most European countries.However
+from the graph below it is clear that Africa had on average less deaths
+than Europe.
 
 Comparing average deaths in Africa to Europe
 
@@ -28,7 +44,12 @@ AVD
 
 ![](README_files/figure-gfm/unnamed-chunk-3-1.png)<!-- -->
 
-Testing and positivity rates in Africa compared to other regions
+Next i looked Testing and positivity rates in Africa compared to other
+regions. The percent positive will be high if the number of positive
+tests is too high, or if the number of total tests is too low. A higher
+percent positive suggests higher transmission and that there are likely
+more people with coronavirus in the community who haven’t been tested
+yet.
 
 ``` r
 TP
@@ -36,7 +57,9 @@ TP
 
 ![](README_files/figure-gfm/unnamed-chunk-4-1.png)<!-- -->
 
-healthcare capacity : ICU patients
+Next i looked at healthcare capacity to ICU patients. This is because
+when COVID hit many hospitals couldn’t keep up with the increase in ICU
+patients which meant they lacked the necssary equiment.
 
 ``` r
 HCC
@@ -44,7 +67,9 @@ HCC
 
 ![](README_files/figure-gfm/unnamed-chunk-5-1.png)<!-- -->
 
-Perform analysis based on life expectancy
+The second part: i looked at to see that if a person got COVID would
+they be at risk. It is clear that those that the older people where more
+at risk. This is due to the fact that they have weaker immmune systems.
 
 ``` r
 LE
@@ -52,15 +77,29 @@ LE
 
 ![](README_files/figure-gfm/unnamed-chunk-6-1.png)<!-- -->
 
-Hospitalization Facilities vs. ICU Admissions
+The third part: i looked at different regions hospitalization
+facilities, and whether this led or lagged ICU admissions.
+
+i decided to look at Hospitalization Facilities vs. ICU Admissions this
+because i wanted to see that as COVID got worse and spread more.
+Hospitals would have had to increase the facilities are make
+althernative arrangements to deal with the increased supply of sick
+people.
 
 ``` r
 HFvICU
 ```
 
-![](README_files/figure-gfm/unnamed-chunk-7-1.png)<!-- -->
-
-Impact of intervention
+![](README_files/figure-gfm/unnamed-chunk-7-1.png)<!-- --> As an
+interesting analysis i thought i would do a stringency index. The
+stringency index is a measure that quantifies the strictness of
+government policies or regulations in response to various events or
+crises such as COVID-19. The stringency index takes into account a range
+of policy indicators, such as school closures, travel restrictions,
+public event cancellations, and social distancing measures, among
+others. By combining these indicators into a single index, it provides a
+measure of the overall stringency of government actions in a particular
+region or country.
 
 ``` r
 SI
@@ -70,26 +109,36 @@ SI
 
 # Question 2
 
+In order to challenge my friend’s claim about the weather in the mid
+parts of England, I have decided to conduct an analysis using weather
+data from London.
+
 ``` r
 source("/Users/sahilbhugwan/Downloads/Data science/21075492/Q2/code/Q2.R")
 ```
 
-Line chart for Max tempretures over the years
+I first starting by showing the maximum temperature trend. The graph
+below shows where UK at heatwaves as well well as the general trend of
+the average temperature.
 
 ``` r
  print(MT)
 ```
 
-![](README_files/figure-gfm/unnamed-chunk-10-1.png)<!-- -->
-
-scatter plot for temperature vs. precipitation
+![](README_files/figure-gfm/unnamed-chunk-10-1.png)<!-- --> Given that
+it is common knowledge that is rains a lot in the UK and from the
+previous graph we can see the average trend of temperatures was
+relatively low. I decided to do a scatter plot for temperature
+vs. precipitation. (for more analysis on the precipitation i do have a
+graph for it in my Q2 pdf)
 
 ``` r
 print(TemP)
 ```
 
-![](README_files/figure-gfm/unnamed-chunk-11-1.png)<!-- --> Number of
-Days max Temp less than 21.1 degrees Celsius
+![](README_files/figure-gfm/unnamed-chunk-11-1.png)<!-- --> Next given
+that the temperature is always low i wanted to see on the in a year the
+number of days the max temperature less than 21.1 degrees Celsius.
 
 ``` r
 L21 
@@ -97,7 +146,10 @@ L21
 
 ![](README_files/figure-gfm/unnamed-chunk-12-1.png)<!-- -->
 
-Number of days with maximum temperature greater than 32.2 degrees
+Lastly my friend believes that it is mostly sunny however i wanted to
+see how many days in the year is the temperature above 32 degrees. It is
+extremely rare that they have more than two days. (I do have a graph in
+my Q2 pdf that shows the distribution of Sun duration for the year)
 
 ``` r
 M32
@@ -107,14 +159,19 @@ M32
 
 # Question 3
 
-Here we will be comparing two of the longst bands that being Coldplay
-and Metallica
+Give that Coldplay and Metallica are one of the most famous bands over
+time i wanted to see the longevity and musical progression of them
 
 ``` r
 source("/Users/sahilbhugwan/Downloads/Data science/21075492/Q3/code/Q3.R")
 ```
 
-Coldplay popular songs
+I first decided to look at Coldplay in my report (in Q3 folder ) it is
+clear that they are most popular from 2010 onwards. I then decided to do
+a graph to show there most popular songs and which album it is from. It
+is clear that after 2016 that is when Coldplay hit it speak with it most
+popular songs. (I also have a table of there most popular song an i am
+aware that my table didnt come out looking nice)
 
 ``` r
 PS(CP)
@@ -163,7 +220,9 @@ PS(CP)
     ## [16] "A Head Full of Dreams Tour Edition"       
     ## [17] "Love in Tokyo"
 
-Metallica popular songs
+I then did the same for metallica, however one key difference is that
+metallica was more popular during Metallica popular songs during that
+late 1980s.
 
 ``` r
 PS(metallica)
@@ -236,7 +295,7 @@ PS(metallica)
     ## [41] "Six Feet Down Under Part 2"                                 
     ## [42] "Six Feet Down Under"
 
-Comparing song Durations
+Next i wanted to see the difference in song length (in milliseconds)
 
 ``` r
 print(DS)
@@ -244,8 +303,10 @@ print(DS)
 
 ![](README_files/figure-gfm/unnamed-chunk-17-1.png)<!-- -->
 
-Correlation matrix based on danceability, energy, instrumentalness,
-liveness, loudness, speechiness & tempo
+Lastly given that they are two different bands they produce different
+type of music hence i decided to do a Correlation matrix based on
+danceability, energy, instrumentalness, liveness, loudness, speechiness
+& tempo
 
 ``` r
 corrplot(CMCP, method = "color") #Coldplay
@@ -261,8 +322,9 @@ corrplot::corrplot(CMM, method = "color", col = colorRampPalette(c("blue", "whit
 
 # Question 4
 
-What works in Streaming service if SU lauches its own one The full pdf
-report can be found in Q4 folder.
+my superiors at SU SU have ambitions of launching their own streaming
+service, hence i will show them what works. (The full pdf report can be
+found in Q4 folder.)
 
 ``` r
 source("/Users/sahilbhugwan/Downloads/Data science/21075492/Q4/code/Q4.R")
@@ -283,7 +345,7 @@ source("/Users/sahilbhugwan/Downloads/Data science/21075492/Q4/code/Q4.R")
     ## 10              TV-Y        299
     ## 11             TV-Y7        667
 
-The first thing to look as is netfix decline
+The first thing i did was show that netflix is haveing a decline
 
 ``` r
 print(Trends) 
@@ -292,7 +354,8 @@ print(Trends)
 ![](README_files/figure-gfm/unnamed-chunk-20-1.png)<!-- -->
 
 Next i look at the content on netflix and it is clear the movies
-dominate
+dominate. Th reason for this can be because movies you can watch in “one
+sitting” don’t need to remember what happened in previous seasons
 
 ``` r
 Pie 
@@ -307,9 +370,10 @@ illustrated it using a word cloud
 generate_wordcloud(genre_counts)
 ```
 
-![](README_files/figure-gfm/unnamed-chunk-22-1.png)<!-- -->
-
-I also looked at which stars appear most on netflix
+![](README_files/figure-gfm/unnamed-chunk-22-1.png)<!-- --> I then
+decided to look at which stars appear most on Netflix the reason for
+this is that if they have a lot of content it means that they are
+popular amongst the general public.
 
 ``` r
 plot_top_names(merged_data)
@@ -317,19 +381,21 @@ plot_top_names(merged_data)
 
 ![](README_files/figure-gfm/unnamed-chunk-23-1.png)<!-- -->
 
-Therefore if SU wants to launch its own streamig service it should look
-to produce movies that are drama or comdey based and include a high
+Therefore if SU wants to launch its own streaming service it should look
+to produce movies that are drama or comedy based and include a high
 profile actor/actress.
 
 # Question 5
 
-Here i will be looking at app size
+Here i am looking at what factors i could use for AppallingDesignes to
+create a new app.
 
 ``` r
 source("/Users/sahilbhugwan/Downloads/Data science/21075492/Q5/code/Q5.R")
 ```
 
-App ratings
+First i will be looking at the distribution of app ratings to the number
+of installs(count)
 
 ``` r
 APR
@@ -337,7 +403,9 @@ APR
 
 ![](README_files/figure-gfm/unnamed-chunk-25-1.png)<!-- -->
 
-App ratings per content
+I then will have to look at the number of installs(count) with regards
+to the age categories. It is clear that an app that is useful for
+everyone will be most benefical.
 
 ``` r
 Ratings
@@ -345,7 +413,9 @@ Ratings
 
 ![](README_files/figure-gfm/unnamed-chunk-26-1.png)<!-- -->
 
-App rating compared to last updated
+I then looked at when apps are updated to rating this is because the
+world is ever changing and peoples are consistently changing and want to
+keep up with the latest trends.
 
 ``` r
 ARLU
@@ -353,7 +423,9 @@ ARLU
 
 ![](README_files/figure-gfm/unnamed-chunk-27-1.png)<!-- -->
 
-App Size compared to rating
+Given that people have a lot of other stuff on there phone such as
+music, photos it is crucial to look at app sizes. This is because people
+will not want to install to large apps that slow down there phone.
 
 ``` r
 ARS
@@ -361,16 +433,20 @@ ARS
 
 ![](README_files/figure-gfm/unnamed-chunk-28-1.png)<!-- -->
 
-User Reviews
+I then looks at the most popular reviews left by consumers, this is to
+ensure to see what feedback they have received. given that “NAN” is the
+most common feedback it should be vital that we can find a way to get
+feedback from the users this will allow us to improve the app.
 
 ``` r
 wordcloud(term_frequency$word, term_frequency$n, scale = c(5, 0.5), max.words = 100, random.order = FALSE,
           color = brewer.pal(8, "Set2"))
 ```
 
-![](README_files/figure-gfm/unnamed-chunk-29-1.png)<!-- -->
-
-App Sentiment
+![](README_files/figure-gfm/unnamed-chunk-29-1.png)<!-- --> Lastly i
+looked at app sentiment of certain app. this will help us understand
+users feelings about why they particularly like or dislike the app’s
+offering or service.
 
 ``` r
 SDA
