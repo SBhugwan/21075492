@@ -96,3 +96,71 @@ HCC
 
 #3#
 
+hospital_icu_data <- covid %>%
+    select(date, continent, hosp_patients_per_million, icu_patients_per_million) %>%
+    na.omit()
+
+hospital_icu_data <- hospital_icu_data %>%
+    group_by(continent, date) %>%
+    summarize(mean_hosp_patients_per_million = mean(hosp_patients_per_million),
+              mean_icu_patients_per_million = mean(icu_patients_per_million)) %>%
+    mutate(cumulative_hosp = cumsum(mean_hosp_patients_per_million),
+           cumulative_icu = cumsum(mean_icu_patients_per_million))
+
+HFvICU<-ggplot(hospital_icu_data, aes(x = date)) +
+    geom_line(aes(y = cumulative_hosp, color = "Hospitalization Facilities")) +
+    geom_line(aes(y = cumulative_icu, color = "ICU Admissions")) +
+    facet_wrap(~ continent, scales = "free_y") +
+    labs(title = "Increase in Hospitalization Facilities vs. ICU Admissions by Continent",
+         x = "Date",
+         y = "Cumulative per Million",
+         color = "Metric") +
+    theme_minimal()
+
+#HFvICU
+
+#OR can view it as a stacked plot
+
+hospital_icu_data_long <- hospital_icu_data %>%
+    select(date, continent, cumulative_hosp, cumulative_icu) %>%
+    pivot_longer(cols = c(cumulative_hosp, cumulative_icu),
+                 names_to = "Metric",
+                 values_to = "Cumulative per Million")
+
+SHFICU<- ggplot(hospital_icu_data_long, aes(x = date, y = `Cumulative per Million`, fill = Metric)) +
+    geom_area() +
+    facet_wrap(~ continent, scales = "free_y") +
+    labs(title = "Increase in Hospitalization Facilities vs. ICU Admissions by Continent",
+         x = "Date",
+         y = "Cumulative per Million",
+         fill = "Metric") +
+    theme_minimal() +
+    theme(axis.text.x = element_text(angle = 45, hjust = 1))
+
+#Extra
+
+C19 <- covid %>%
+    mutate(date = as.Date(date),
+           Month = format(date, "%b") ) %>%
+    select(date, Month, continent, new_cases_per_million, people_fully_vaccinated_per_hundred) %>% arrange(Month)
+
+C19 <- C19 %>%
+    group_by(Month, continent) %>%
+    summarise(across(.cols = 2:3, .fns = mean, na.rm = TRUE, .names = "Mean_{.col}")) %>% gather(key = Observation, value = Rate, -Month, -continent  ) %>% arrange(continent, Month)
+
+MCFV<- C19%>%
+    ggplot(aes(x = Month, y = Rate, fill = Observation)) +
+    geom_bar(stat = "identity", position = "dodge") +
+    facet_wrap(~ continent, scales = "free_y") +
+    labs(title = "Mean Rates by Month and Continent",
+         x = "Month",
+         y = "Mean Rate",
+         fill = "Observation") +
+    theme_minimal() +
+    theme(plot.title = element_text(size = 4, face = "bold"),
+          axis.text = element_text(size = 4),
+          axis.title = element_text(size = 4, face = "bold"),
+          legend.title = element_text(size = 8),
+          legend.text = element_text(size = 4))
+
+#MCFV
