@@ -169,7 +169,7 @@
 
 \begin{frontmatter}  %
 
-\title{Question 4}
+\title{Question 3}
 
 % Set to FALSE if wanting to remove title (for submission)
 
@@ -199,7 +199,7 @@ these two bands on longevity and musical progression
 
 \begin{keyword}
 \footnotesize{
-Multivariate GARCH \sep Kalman Filter \sep Copula \\
+music\textbackslash{} \\
 \vspace{0.3cm}
 }
 \footnotesize{
@@ -354,6 +354,80 @@ they started gaining moment in early 2020s.
 
 Next i will also be looking at the most popular songs
 
+\begin{figure}[H]
+
+{\centering \includegraphics{Q3_files/figure-latex/Figure5-1} 
+
+}
+
+\caption{Songs over time  \label{Figure5}}\label{fig:Figure5}
+\end{figure}
+
+\begin{verbatim}
+## $cold_pop
+## # A tibble: 10 x 15
+##    name        album~1 durat~2 popul~3 release_~4 dance~5 energy loudn~6 speec~7
+##    <chr>       <chr>     <dbl>   <dbl> <date>       <dbl>  <dbl>   <dbl>   <dbl>
+##  1 Turn The P~ Garage~  366400      62 1998-11-24   0.422  0.818   -3.94  0.0319
+##  2 Whiskey In~ Garage~  304893      67 1998-11-24   0.511  0.972   -3.75  0.0413
+##  3 Turn The P~ Garage~  366467      66 1998-01-01   0.426  0.813   -3.96  0.0318
+##  4 Whiskey In~ Garage~  304693      76 1998-01-01   0.511  0.97    -3.72  0.0414
+##  5 One (Remas~ ...And~  446146      51 1988-09-07   0.438  0.687   -9.15  0.0619
+##  6 One (Remas~ ...And~  446146      72 1988-09-07   0.438  0.687   -9.15  0.0619
+##  7 One         And Ju~  446146      50 1988-08-25   0.439  0.691   -9.16  0.0608
+##  8 One         ...And~  447440      75 1988-08-25   0.437  0.695   -9.45  0.0617
+##  9 For Whom T~ Ride T~  309973      73 1984-07-27   0.512  0.86    -6.14  0.0703
+## 10 For Whom T~ Ride T~  309973      54 1984-07-27   0.512  0.86    -6.14  0.0703
+## # ... with 6 more variables: acousticness <dbl>, instrumentalness <dbl>,
+## #   liveness <dbl>, valence <dbl>, tempo <dbl>, album_release <date>, and
+## #   abbreviated variable names 1: album_name, 2: duration_ms, 3: popularity,
+## #   4: release_date, 5: danceability, 6: loudness, 7: speechiness
+## 
+## $order
+##  [1] "72 Seasons"                                                 
+##  [2] "Metallica"                                                  
+##  [3] "Metallica (Remastered)"                                     
+##  [4] "Master Of Puppets (Remastered)"                             
+##  [5] "...And Justice For All"                                     
+##  [6] "Kill Em All (Remastered)"                                   
+##  [7] "...And Justice for All (Remastered)"                        
+##  [8] "Ride The Lightning (Remastered)"                            
+##  [9] "Death Magnetic"                                             
+## [10] "Garage Inc."                                                
+## [11] "HardwiredTo Self-Destruct"                                  
+## [12] "Load"                                                       
+## [13] "And Justice for All (Remastered)"                           
+## [14] "Metallica (Remastered 2021)"                                
+## [15] "Reload"                                                     
+## [16] "Garage, Inc."                                               
+## [17] "HardwiredTo Self-Destruct (Deluxe)"                         
+## [18] "Metallica Through The Never (Music From The Motion Picture)"
+## [19] "St. Anger"                                                  
+## [20] "S&M2"                                                       
+## [21] "S&M"                                                        
+## [22] "Live Sh*t: Binge & Purge (Live In Mexico City)"             
+## [23] "Helping HandsLive & Acoustic At The Masonic"                
+## [24] "Live S**t: Binge & Purge"                                   
+## [25] "Ride The Lightning (Deluxe Remaster)"                       
+## [26] "Some Kind Of Monster"                                       
+## [27] "Ride The Lightning (Deluxe / Remastered)"                   
+## [28] "Helping Hands...Live & Acoustic at The Masonic"             
+## [29] "Live In Brazil (1993 \x93 2017)"                            
+## [30] "Kill Em All (Deluxe / Remastered)"                          
+## [31] "Metallica (Remastered Deluxe Box Set)"                      
+## [32] "Lulu"                                                       
+## [33] "Kill Em All (Deluxe Remaster)"                              
+## [34] "Master of Puppets (Remastered Deluxe Box Set)"              
+## [35] "And Justice for All (Remastered Deluxe Box Set)"            
+## [36] "...And Justice for All (Remastered Deluxe Box Set)"         
+## [37] "Some Kind Of Monster (Live)"                                
+## [38] "Live In Chile (1993 \x93 2017)"                             
+## [39] "Master Of Puppets (Deluxe Box Set / Remastered)"            
+## [40] "Live In Argentina (1993 \x93 2017)"                         
+## [41] "Six Feet Down Under Part 2"                                 
+## [42] "Six Feet Down Under"
+\end{verbatim}
+
 It can be seen they they clearly peaked in the late 1990s
 
 lastly i will be looking at the correlation matrix for metallica
@@ -366,6 +440,35 @@ lastly i will be looking at the correlation matrix for metallica
 
 \caption{Correlation matrix  \label{Figure6}}\label{fig:Figure6}
 \end{figure}
+
+Now if we had to look at the song duration between coldplay and
+mettallica
+
+\begin{figure}[H]
+
+{\centering \includegraphics{Q3_files/figure-latex/Figure7-1} 
+
+}
+
+\caption{Song Duration   \label{Figure7}}\label{fig:Figure7}
+\end{figure}
+
+\hypertarget{extra}{%
+\section{Extra}\label{extra}}
+
+Next I want to analyse the different genres i how much energy the
+produce
+
+\begin{figure}[H]
+
+{\centering \includegraphics{Q3_files/figure-latex/Figure8-1} 
+
+}
+
+\caption{Engergy per Genre  \label{Figure8}}\label{fig:Figure8}
+\end{figure}
+
+It is clear from this that metal and punk will give you the most energy
 
 \bibliography{Tex/ref}
 
