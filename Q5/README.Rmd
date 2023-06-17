@@ -1,0 +1,45 @@
+---
+title: "Question 5 "
+output: html_document
+date: "2023-06-17"
+---
+
+```{r}
+suppressMessages(library(tidyverse))
+
+source("/Users/sahilbhugwan/Downloads/Data science/21075492/Q5/code/Q5.R")
+```
+
+
+
+App ratings 
+```{r}
+APR
+```
+App ratings per content 
+```{r}
+Ratings
+```
+
+App rating compared to last updated 
+```{r}
+ARLU
+```
+App Size compared to rating 
+```{r}
+ARS
+```
+
+User Reviews 
+
+```{r}
+wordcloud(term_frequency$word, term_frequency$n, scale = c(5, 0.5), max.words = 100, random.order = FALSE,
+          color = brewer.pal(8, "Set2"))
+```
+ 
+ App Sentiment 
+ 
+```{r}
+SDA
+```
+ 
