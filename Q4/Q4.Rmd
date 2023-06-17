@@ -159,7 +159,8 @@ plot_average_ratings(sorted_ratings)
 
 ```{r Figure5, warning =  FALSE, fig.align = 'center', fig.cap = "Age Ratings   \\label{Figure4}", fig.height = 4, fig.width = 6, dev = 'png'}
 
-    print(certification_table)
+print(certification_table)
+    
 ```
 
 # Popular people on Netflix 
@@ -203,3 +204,5 @@ generate_wordcloud(genre_counts)
 Therefore it can bee see that drama and comedy are the most popular content on netflix
 
 # Conclusion
+
+Therefore if SU launches it sown streaming service it must ensure that it has a lot of movies for it users. It should also have high content of Drama. Thus a possibility if for them to produce there own content with one of the top actors/actress these will help ensure that it is successful.

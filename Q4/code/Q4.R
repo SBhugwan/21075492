@@ -166,7 +166,6 @@ plot_title_count_by_country <- function(data) {
 
 #plot_title_count_by_country(merged_data)
 
-
 #Analysis genres
 library(wordcloud)
 library(tidytext)
@@ -211,6 +210,11 @@ certification_counts <- table(certification_data$age_certification)
 certification_table <- data.frame(age_certification = names(certification_counts),
                                   num_titles = as.numeric(certification_counts))
 print(certification_table)
+
+
+
+
+
 
 
 
