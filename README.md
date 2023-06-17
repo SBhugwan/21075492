@@ -90,8 +90,9 @@ people.
 HFvICU
 ```
 
-![](README_files/figure-gfm/unnamed-chunk-7-1.png)<!-- --> As an
-interesting analysis i thought i would do a stringency index. The
+![](README_files/figure-gfm/unnamed-chunk-7-1.png)<!-- -->
+
+As an interesting analysis i thought i would do a stringency index. The
 stringency index is a measure that quantifies the strictness of
 government policies or regulations in response to various events or
 crises such as COVID-19. The stringency index takes into account a range
@@ -125,9 +126,10 @@ the average temperature.
  print(MT)
 ```
 
-![](README_files/figure-gfm/unnamed-chunk-10-1.png)<!-- --> Given that
-it is common knowledge that is rains a lot in the UK and from the
-previous graph we can see the average trend of temperatures was
+![](README_files/figure-gfm/unnamed-chunk-10-1.png)<!-- -->
+
+Given that it is common knowledge that is rains a lot in the UK and from
+the previous graph we can see the average trend of temperatures was
 relatively low. I decided to do a scatter plot for temperature
 vs. precipitation. (for more analysis on the precipitation i do have a
 graph for it in my Q2 pdf)
@@ -136,9 +138,11 @@ graph for it in my Q2 pdf)
 print(TemP)
 ```
 
-![](README_files/figure-gfm/unnamed-chunk-11-1.png)<!-- --> Next given
-that the temperature is always low i wanted to see on the in a year the
-number of days the max temperature less than 21.1 degrees Celsius.
+![](README_files/figure-gfm/unnamed-chunk-11-1.png)<!-- -->
+
+Next given that the temperature is always low i wanted to see on the in
+a year the number of days the max temperature less than 21.1 degrees
+Celsius.
 
 ``` r
 L21 
@@ -370,9 +374,10 @@ illustrated it using a word cloud
 generate_wordcloud(genre_counts)
 ```
 
-![](README_files/figure-gfm/unnamed-chunk-22-1.png)<!-- --> I then
-decided to look at which stars appear most on Netflix the reason for
-this is that if they have a lot of content it means that they are
+![](README_files/figure-gfm/unnamed-chunk-22-1.png)<!-- -->
+
+I then decided to look at which stars appear most on Netflix the reason
+for this is that if they have a lot of content it means that they are
 popular amongst the general public.
 
 ``` r
@@ -443,10 +448,11 @@ wordcloud(term_frequency$word, term_frequency$n, scale = c(5, 0.5), max.words = 
           color = brewer.pal(8, "Set2"))
 ```
 
-![](README_files/figure-gfm/unnamed-chunk-29-1.png)<!-- --> Lastly i
-looked at app sentiment of certain app. this will help us understand
-users feelings about why they particularly like or dislike the app’s
-offering or service.
+![](README_files/figure-gfm/unnamed-chunk-29-1.png)<!-- -->
+
+Lastly i looked at app sentiment of certain app. this will help us
+understand users feelings about why they particularly like or dislike
+the app’s offering or service.
 
 ``` r
 SDA
