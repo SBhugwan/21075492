@@ -80,18 +80,22 @@ App ratings
 ```{r message=FALSE, warning=FALSE}
 APR
 ```
+
 App ratings per content
+
 ```{r message=FALSE, warning=FALSE}
 Ratings
 ```
 
 
 App rating compared to last updated
+
 ```{r message=FALSE, warning=FALSE}
 ARLU
 ```
 
 App Size compared to rating
+
 ```{r message=FALSE, warning=FALSE}
 ARS
 ```
