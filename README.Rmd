@@ -78,6 +78,18 @@ scatter plot for temperature vs. precipitation
 ```{r message=FALSE, warning=FALSE}
 print(TemP)
 ```
+Number of Days max Temp less than 21.1 degrees Celsius
+
+```{r}
+L21 
+```
+
+Number of days with maximum temperature greater than 32.2 degrees
+
+```{r}
+M32
+
+```
 
 
 # Question 3 
@@ -121,28 +133,28 @@ corrplot::corrplot(CMM, method = "color", col = colorRampPalette(c("blue", "whit
 What works in Streaming service if SU lauches its own one 
 The full pdf report can be found in Q4 folder.
 
-```{r}
+```{r message=FALSE, warning=FALSE}
 source("/Users/sahilbhugwan/Downloads/Data science/21075492/Q4/code/Q4.R")
 ```
 
 The first thing to look as is netfix decline 
-```{r}
+```{r message=FALSE, warning=FALSE}
 print(Trends) 
 ```
 
 Next i look at the content on netflix and it is clear the movies dominate 
 
-```{r}
+```{r message=FALSE, warning=FALSE}
 Pie 
 ```
 
 I then looked at what are the most popular genres on Netflix and illustrated it using a word cloud 
-```{r}
+```{r message=FALSE, warning=FALSE}
 generate_wordcloud(genre_counts)
 ```
 
 I also looked at which stars appear most on netflix 
-```{r}
+```{r message=FALSE, warning=FALSE}
 plot_top_names(merged_data)
 ```
 
