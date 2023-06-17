@@ -116,9 +116,6 @@ EG<- function(data) {
 
 EG(Spotify)
 
-
-
-
 #Song Duration plot
 create_duration_plot <- function(data) {
 

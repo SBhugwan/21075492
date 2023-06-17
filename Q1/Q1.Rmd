@@ -1,92 +1,41 @@
 ---
-# IMPORTANT: Change settings here, but DO NOT change the spacing.
-# Remove comments and add values where applicable.
-# The descriptions below should be self-explanatory
-
-title: "Question 1 "
-#subtitle: "This will appear as Right Header"
-
-documentclass: "elsarticle"
-
-# --------- Thesis title (Optional - set to FALSE by default).
-# You can move the details below around as you please.
-Thesis_FP: FALSE
-# Entry1: "An unbelievable study with a title spanning multiple lines."
-# Entry2: "\\textbf{Nico Katzke}" # textbf for bold
-# Entry3: "A thesis submitted toward the degree of Doctor of Philosophy"
-# Uni_Logo: Tex/Logo.png # Place a logo in the indicated location (from your root, e.g. defaults to ~/Tex/Logo.png) and uncomment this line. Leave uncommented for no image
-# Logo_width: 0.3 # If using a logo - use this to set width (size) of image
-# Entry4: "Under the supervision of: \\vfill Prof. Joe Smith and Dr. Frank Smith"
-# Entry5: "Stellenbosch University"
-# Entry6: April 2020
-# Entry7:
-# Entry8:
-
-# --------- Front Page
-# Comment: ----- Follow this pattern for up to 5 authors
-AddTitle: TRUE # Use FALSE when submitting to peer reviewed platform. This will remove author names.
-Author1: "Sahil Bhugwan"  # First Author - note the thanks message displayed as an italic footnote of first page.
-Ref1: "Github-https://github.com/SBhugwan " # First Author's Affiliation
-Email1: "21075492\\@sun.ac.za" # First Author's Email address
-
-
-
-CorrespAuthor_1: TRUE  # If corresponding author is author 3, e.g., use CorrespAuthor_3: TRUE
-
-# Comment out below to remove both. JEL Codes only given if keywords also given.
-keywords: "COVID-19" # Use \\sep to separate
-
-
-# ----- Manage headers and footers:
-#BottomLFooter: $Title$
-#BottomCFooter:
-#TopLHeader: \leftmark # Adds section name at topleft. Remove comment to add it.
-BottomRFooter: "\\footnotesize Page \\thepage" # Add a '#' before this line to remove footer.
-addtoprule: TRUE
-addfootrule: TRUE               # Use if footers added. Add '#' to remove line.
-
-# --------- page margins:
-margin: 2.3 # Sides
-bottom: 2 # bottom
-top: 2.5 # Top
-HardSet_layout: TRUE # Hard-set the spacing of words in your document. This will stop LaTeX squashing text to fit on pages, e.g.
-# This is done by hard-setting the spacing dimensions. Set to FALSE if you want LaTeX to optimize this for your paper.
-
-# --------- Line numbers
-linenumbers: FALSE # Used when submitting to journal
-
-# ---------- References settings:
-# You can download cls format here: https://www.zotero.org/ - simply search for your institution. You can also edit and save cls formats here: https://editor.citationstyles.org/about/
-# Hit download, store it in Tex/ folder, and change reference below - easy.
-bibliography: Tex/ref.bib       # Do not edit: Keep this naming convention and location.
-csl: Tex/harvard-stellenbosch-university.csl # referencing format used.
-# By default, the bibliography only displays the cited references. If you want to change this, you can comment out one of the following:
-#nocite: '@*' # Add all items in bibliography, whether cited or not
-# nocite: |  # add specific references that aren't cited
-#  @grinold2000
-#  @Someoneelse2010
-
-# ---------- General:
-RemovePreprintSubmittedTo: TRUE  # Removes the 'preprint submitted to...' at bottom of titlepage
-Journal: "Journal of Finance"   # Journal that the paper will be submitting to, if RemovePreprintSubmittedTo is set to TRUE.
-toc: FALSE                       # Add a table of contents
-numbersections: TRUE             # Should sections (and thus figures and tables) be numbered?
-fontsize: 12pt                  # Set fontsize
-linestretch: 1.5               # Set distance between lines.
-link-citations: TRUE            # This creates dynamic links to the papers in reference list.
-
-### Adding additional latex packages:
-# header-includes:
-#    - \usepackage{colortbl} # Add additional packages here.
-
+title: 'Question 1 '
+documentclass: elsarticle
+Thesis_FP: no
 output:
   pdf_document:
-    keep_tex: TRUE
+    keep_tex: yes
     template: Tex/TexDefault.txt
-    fig_width: 3.5 # Adjust default figure sizes. This can also be done in the chunks of the text.
+    fig_width: 3.5
     fig_height: 3.5
+  html_document:
+    df_print: paged
+Author1: Sahil Bhugwan
+Ref1: "Github-https://github.com/SBhugwan "
+Email1: 21075492\@sun.ac.za
+CorrespAuthor_1: yes
+keywords: "COVID-19"
+BottomRFooter: \footnotesize Page \thepage
+addtoprule: yes
+addfootrule: yes
+margin: 2.3
+bottom: 2
+top: 2.5
+HardSet_layout: yes
+linenumbers: no
+bibliography: Tex/ref.bib
+csl: "Tex/harvard-stellenbosch-university.csl"
+RemovePreprintSubmittedTo: yes
+Journal: Journal of Finance
+toc: no
+numbersections: yes
+fontsize: 12pt
+linestretch: 1.5
+link-citations: yes
+AddTitle: yes
 abstract: |
-  The Covid-19 pandemic has wreaked havoc on many facets of our lives, and continue to affect travel, work and how people socially interact.
+  The Covid-19 pandemic has wreaked havoc on many facets of our lives, and
+  continue to affect travel, work and how people socially interact 
 ---
 
 <!-- First: Set your default preferences for chunk options: -->
@@ -102,7 +51,7 @@ knitr::opts_chunk$set(echo = FALSE, message = FALSE, warning = FALSE, fig.width 
 # Lets load in example data, and see how this can be stored and later called from your 'data' folder.
 if(!require("tidyverse")) install.packages("tidyverse")
 library(tidyverse)
-
+library(RColorBrewer)
 source("/Users/sahilbhugwan/Downloads/Data science/21075492/Q1/code/Q1.R")
 
 ```
@@ -115,42 +64,99 @@ source("/Users/sahilbhugwan/Downloads/Data science/21075492/Q1/code/Q1.R")
 
 # Introduction \label{Introduction}
 
-COVID-19 was a unique time in the wold with basically the whole world going into a lock down.
+COVID-19 was a unique time in the wold with basically the whole world going into a lock down. It therefore is crucial to look at how certain countries performed we we take a particular look at how Africa did compared to the rest of the world.
 
-# Africa 
+# Africa
 
-This section will shows how Africa did compered to other countries.
+This section will look at how Africa does compared to the rest of the world. It is important to note that in Africa they are more used to responding to outbreaks fro example the Ebola outbreak.
 
 First i will be looking at the average deaths compared to other regions
 
-```{r Figure1,  warning =  FALSE, fig.align = 'center', fig.cap = "Average deaths \\label{Figure1}", fig.ext = 'png', fig.height = 3, fig.width = 6}
+```{r Figure1,  warning =  FALSE, fig.align = 'center', fig.cap = "Average deaths \\label{Figure1}", fig.ext = 'png', fig.height = 5, fig.width = 6}
 
 AVD
 
 ```
 
-It is clear that the average deaths in Africa seem to be much lower than that to the rest of the world this suggesting that Africa might have been quicker to respond to the infection rates.
+It is clear that the average deaths in Africa seem to be much lower than that to the rest of the world this suggesting that Africa might have been quicker to respond to the infection rates. However it is important to note that more people live outside of Africa. Though we could look at other important consideration, just as testing of COVID.
 
-This could be because the testing rates in Africa could have been more efficient
-
-```{r Figure2,  warning =  FALSE, fig.align = 'center', fig.cap = "Testing rates \\label{Figure2}", fig.ext = 'png', fig.height = 3, fig.width = 6}
+```{r Figure2,  warning =  FALSE, fig.align = 'center', fig.cap = "Testing rates \\label{Figure2}", fig.ext = 'png', fig.height = 5, fig.width = 6}
 
 
 TP
 ```
 
-## Healthcare capacity in Africa 
+This graph shows that Africa had less test on average compared to the rest of the world. This could mean that on average Africa could have had less positive case of Covid compared to the world. Which wold make intuitive sense given the fact that Africa does have less people that of the rest of the world.
 
-The first will be looking at hospital beds
+## Healthcare capacity in Africa
 
-```{r Figure3,  warning =  FALSE, fig.align = 'center', fig.cap = "Hospital Beds \\label{Figure3}", fig.ext = 'png', fig.height = 3, fig.width = 6}
+In these section we will look in term "hospitals" in how Africa performed compared to the rest of the World. The first thing that i will look at is how many hospital beds
+
+```{r Figure3,  warning =  FALSE, fig.align = 'center', fig.cap = "Hospital Beds \\label{Figure3}", fig.ext = 'png', fig.height = 5, fig.width = 6}
+
 HB
+
 ```
 
-Next i will be looking at ICU patients
+It is clear that when COVID hit the world the number of bed needed increased dramatically however the increase was more prominent in other regions outside of Africa. The could be due to numerous reasons. A possibility could be the fact that in Africa they had less ICU patients compared to the rest of the World.
 
-```{r Figure4,  warning =  FALSE, fig.align = 'center', fig.cap = "ICU Patients \\label{Figure4}", fig.ext = 'png', fig.height = 3, fig.width = 6}
+```{r Figure4,  warning =  FALSE, fig.align = 'center', fig.cap = "ICU Patients \\label{Figure4}", fig.ext = 'png', fig.height = 5, fig.width = 6}
+
 HCC
+
 ```
 
-#  {.unnumbered}
+It is clear that Africa didn't have such a large spike in ICU patients than the rest of the world. What we can gather from this is that Africa was handled the pandemic efficiently in that it was quick to respond to the first outbreak and was able to control the spread of it.
+
+```{r Figure5,  warning =  FALSE, fig.align = 'center', fig.cap = "Hospitalization VS ICU Admissions  \\label{Figure5}", fig.ext = 'png', fig.height = 8, fig.width = 7}
+
+HFvICU
+
+
+```
+
+```{r Figure6,  warning =  FALSE, fig.align = 'center', fig.cap = "Hospitalization VS ICU Admissions  \\label{Figure6}", fig.ext = 'png', fig.height = 8, fig.width = 7}
+
+SHFICU
+
+```
+
+There by looking at the two graph that Africa responded much quicker that that of the rest of the world to increase its hospital facilities to cope with the increase in ICU patients.
+
+This shows that AFrica on probabary also didnt have as many people infected or that when there was a vaccine the number of new cases to people was under control.
+
+```{r Figure7,  warning =  FALSE, fig.align = 'center', fig.cap = " Ave cases vs vaccinated  \\label{Figure7}", fig.ext = 'png', fig.height = 8, fig.width = 7 }
+
+MCFV
+
+```
+
+Therefore we can see that in Africa the proportion on new case to people vaccinated remained relatively closed togethor and didnt get out of control.
+
+An intersting observation will be to look at the impact of the intervention.
+
+```{r Figure8,  warning =  FALSE, fig.align = 'center', fig.cap = " Ave cases vs vaccinated  \\label{Figure8 }", fig.ext = 'png', fig.height = 8, fig.width = 6 }
+
+SI
+```
+
+The stringency index is a composite measurebased on nine response indicators including schoolclosures, workplace closures, and travel bans. This shows how effective the interventions where with regards to controlloing the pandemic.
+
+# Poverty levels
+
+Next i will be looking to see if specific groups for example those in extreme poverty had it worse
+
+```{r Figure9, warning =  FALSE, fig.align='center', fig.cap=" Extreme poverty  \\label{Figure9 }", fig.ext='png', fig.height=8, fig.width= 6, message=FALSE, warning=FALSE}
+
+EPL
+
+```
+
+Next i will look at Perform analysis based on life expectancy
+
+```{r Figure10,  warning =  FALSE, fig.align = 'center', fig.cap = "Life Expectancy \\label{Figure10}", fig.ext = 'png', fig.height = 6, fig.width = 6}
+LE
+```
+
+# Conclusion
+There it can be seen that Covid will have a lasting impact on the world. Though surprisingly Africa did perform a lot better than one would expect considering  that it is third world country. 

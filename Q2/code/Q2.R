@@ -26,9 +26,6 @@ MT <- ggplot(London, aes(x = date, y = max_temp)) +
 
 
 # Bar chart for precipitation levels
-PL<- ggplot(London, aes(x = date, y = precipitation)) +
-    geom_bar(stat = "identity", fill = "blue") +
-    labs(x = "Date", y = "Precipitation", title = "Precipitation Levels")
 
 PL <- ggplot(London, aes(x = date, y = precipitation)) +
     geom_bar(stat = "identity", fill = "#0099CC", alpha = 0.8) +

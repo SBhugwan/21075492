@@ -38,6 +38,7 @@ L21
 M32
 ```
 
+It is clear from this that the UK experiences more days when the temperature is less that 21 degrees. suggesting that even in summer Cape Town weather is definitely better !
 
 
 

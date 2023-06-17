@@ -132,4 +132,3 @@ SDA<-ggplot(filtered_sentiment, aes(x = App, y = Average_Sentiment, fill = Senti
 
 #SDA
 
-

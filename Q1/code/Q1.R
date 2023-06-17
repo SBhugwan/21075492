@@ -127,7 +127,7 @@ HCC<- ggplot() +
 
 #HCC
 
-#2#
+#2# looking at poverty and life expectancy
 
 filtered_data <- covid %>%
     select(location, total_deaths_per_million, extreme_poverty, life_expectancy)
@@ -165,7 +165,7 @@ LE<- ggplot(filtered_data, aes(x = life_expectancy, y = total_deaths_per_million
           axis.text.y = element_text(size = 10))
 
 
-#3#
+#3# lagged hospitals
 
 hospital_icu_data <- covid %>%
     select(date, continent, hosp_patients_per_million, icu_patients_per_million) %>%
